@@ -1,0 +1,26 @@
+[
+    {
+        "key": "gms_collapse",
+        "default": "0"
+    },
+    {
+        "key": "gms_enable",
+        "default": "1"
+    },
+    {
+        "key": "gms_include_global_title",
+        "default": "1"
+    },
+    {
+        "key": "gms_limit",
+        "default": "5"
+    },
+    {
+        "key": "gms_orderby",
+        "default": "position"
+    },
+    {
+        "key": "gms_title",
+        "default": "%board_name% Messages"
+    }
+]

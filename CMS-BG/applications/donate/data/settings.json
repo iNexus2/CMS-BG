@@ -1,0 +1,114 @@
+[
+    {
+        "key": "dt_amounts",
+        "default": "5,10,15,25,50,75,100"
+    },
+    {
+        "key": "dt_anon_donation",
+        "default": "1"
+    },
+    {
+        "key": "dt_anon_donation_amount",
+        "default": "1"
+    },
+    {
+        "key": "dt_create_own_topic",
+        "default": "1"
+    },
+    {
+        "key": "dt_create_topic",
+        "default": "0"
+    },
+    {
+        "key": "dt_create_topic_forum",
+        "default": ""
+    },
+    {
+        "key": "dt_default_currency",
+        "default": "1"
+    },
+    {
+        "key": "dt_donation_reset",
+        "default": ""
+    },
+    {
+        "key": "dt_donation_reset_day",
+        "default": ""
+    },
+    {
+        "key": "dt_donation_reset_timeframe",
+        "default": ""
+    },
+    {
+        "key": "dt_enable_donation_rss",
+        "default": "1"
+    },
+    {
+        "key": "dt_enable_goal_rss",
+        "default": "1"
+    },
+    {
+        "key": "dt_goal_close",
+        "default": "0"
+    },
+    {
+        "key": "dt_goal_reset",
+        "default": ""
+    },
+    {
+        "key": "dt_goal_reset_day",
+        "default": ""
+    },
+    {
+        "key": "dt_goal_reset_timeframe",
+        "default": ""
+    },
+    {
+        "key": "dt_goal_total",
+        "default": "0"
+    },
+    {
+        "key": "dt_hide_topic_hook",
+        "default": "0"
+    },
+    {
+        "key": "dt_include_fees",
+        "default": "0"
+    },
+    {
+        "key": "dt_latest_goals",
+        "default": "5"
+    },
+    {
+        "key": "dt_member_rewards_total_donations",
+        "default": "0"
+    },
+    {
+        "key": "dt_min_donation",
+        "default": "1"
+    },
+    {
+        "key": "dt_new_donation_pm",
+        "default": "1"
+    },
+    {
+        "key": "dt_new_promotion_pm",
+        "default": "1"
+    },
+    {
+        "key": "dt_pm_sender",
+        "default": ""
+    },
+    {
+        "key": "dt_topic_author",
+        "default": ""
+    },
+    {
+        "key": "dt_topic_message",
+        "default": "<p>Hi %member_name%,<\/p><p>Thank you for your donation of %amount% %currency%. We look forward to improving the forums with your donation.<\/p><p>%board_name%<\/p>"
+    },
+    {
+        "key": "dt_topic_title",
+        "default": "New Donation %member_name%"
+    }
+]

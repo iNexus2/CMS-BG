@@ -1,0 +1,18 @@
+[17-Apr-2017 08:18:56 UTC] PHP Fatal error:  Call to a member function decodeJson() on null in /home/alliedso/public_html/cms-bg.eu/applications/core/tasks/updatecheck.php on line 119
+[17-Apr-2017 08:18:59 UTC] PHP Fatal error:  Call to a member function decodeJson() on null in /home/alliedso/public_html/cms-bg.eu/applications/core/tasks/updatecheck.php on line 119
+[17-Apr-2017 08:54:12 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:54:14 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:54:17 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:54:19 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:54:26 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:57:37 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:57:40 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:57:44 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:57:59 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:58:01 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 08:58:03 UTC] PHP Fatal error:  Class 'IPS\Helpers\Form\NumberRange' not found in /home/alliedso/public_html/cms-bg.eu/applications/donate/sources/Reward/Reward.php on line 122
+[17-Apr-2017 10:56:34 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/alliedso/public_html/cms-bg.eu/system/Theme/SandboxedTemplate.php on line 57
+[17-Apr-2017 11:04:08 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/alliedso/public_html/cms-bg.eu/system/Theme/SandboxedTemplate.php on line 57
+[17-Apr-2017 11:04:14 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/alliedso/public_html/cms-bg.eu/system/Theme/SandboxedTemplate.php on line 57
+[17-Apr-2017 11:04:18 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/alliedso/public_html/cms-bg.eu/system/Theme/SandboxedTemplate.php on line 57
+[17-Apr-2017 11:04:22 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/alliedso/public_html/cms-bg.eu/system/Theme/SandboxedTemplate.php on line 57

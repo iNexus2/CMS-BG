@@ -1,0 +1,11 @@
+<ips:template parameters="" />
+{{if settings.af_getintouchtoggle == 1}}
+	<div class='ipsColumn ipsColumn_wide getintouchCol'>
+		<div class="getintouchBlo">
+			{{if settings.af_getintouchheader}}<h3>{setting="af_getintouchheader"}</h3>{{endif}}
+			<ul class="ipsDataList">
+				{setting="af_getintouch_content"}
+			</ul>
+		</div>
+	</div>
+{{endif}}

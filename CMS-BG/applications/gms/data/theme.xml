@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Default" author_name="Invision Power Services, Inc" author_url="http://www.invisionpower.com">
+ <template template_group="global" template_name="messageList" template_data="$override=FALSE" template_location="front" template_app="gms"><![CDATA[{{if settings.gms_enable OR $override == TRUE}}
+    {{if settings.gms_include_global_title AND count( \IPS\gms\Message::messages() ) AND $override == FALSE}}
+        <h3>{expression="str_replace( '%board_name%', settings.board_name, \IPS\Member::loggedIn()->language()->get( 'gms_title_value' ) )"}</h3>  
+    {{endif}}
+
+    {{foreach \IPS\gms\Message::messages() as $message}}
+        {template="messageRow" group="global" app="gms" params="$message"}
+    {{endforeach}}
+{{endif}}]]></template>
+ <template template_group="global" template_name="messageRow" template_data="$message" template_location="front" template_app="gms"><![CDATA[{{if $message->canSee()}} 
+    {{if $options = json_decode( $message->options, TRUE ) AND ( $options['message_style'] == '1' OR $options['message_style'] == '2' ) }}
+        <div class='ipsMessage ipsMessage_info'>
+        	{{if $message->show_title}}<h4 class='ipsMessage_title'>{$message->_title}</h4>{{endif}}
+        	<p class='ipsType_reset ipsType_medium'>{$message->_description|raw}</p>
+        </div>  
+    {{elseif $options['message_style'] == '3'}}
+        <div class='ipsMessage ipsMessage_error'>
+        	{{if $message->show_title}}<h4 class='ipsMessage_title'>{$message->_title}</h4>{{endif}}
+        	<p class='ipsType_reset ipsType_medium'>{$message->_description|raw}</p>
+        </div>
+    {{elseif $options['message_style'] == '5'}}
+        <div class='ipsMessage ipsMessage_success'>
+        	{{if $message->show_title}}<h4 class='ipsMessage_title'>{$message->_title}</h4>{{endif}}
+        	<p class='ipsType_reset ipsType_medium'>{$message->_description|raw}</p>
+        </div>  
+    {{elseif $options['message_style'] == '6'}}
+        <div class='ipsMessage ipsMessage_warning'>
+        	{{if $message->show_title}}<h4 class='ipsMessage_title'>{$message->_title}</h4>{{endif}}
+        	<p class='ipsType_reset ipsType_medium'>{$message->_description|raw}</p>
+        </div> 
+    {{elseif !is_numeric( $options['message_style'] )}}
+        <div class='{$options['message_style']}'>
+        	{{if $message->show_title}}<div id='gms_message_{$message->id}_title'>{$message->_title}</div>{{endif}}
+        	<div id='gms_message_{$message->id}_message'>{$message->_description|raw}</div>
+        </div>         
+    {{endif}}
+{{endif}}]]></template>
+</theme>

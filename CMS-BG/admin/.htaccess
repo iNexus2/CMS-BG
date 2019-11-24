@@ -1,0 +1,5 @@
+ErrorDocument 401 "Unauthorized Access"
+AuthType Basic
+AuthName "IPS Community Suite AdminCP"
+AuthUserFile "/home/alliedso/public_html/cms-bg.eu/admin/.htpasswd"
+Require valid-user

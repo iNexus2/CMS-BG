@@ -1,0 +1,16 @@
+[
+    {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "gms",
+                "word_key": "gms_title_value",
+                "word_default": "%board_name% Messages",
+                "word_custom": "%board_name% Messages",
+                "word_export": 0
+            }
+        ]
+    }
+]

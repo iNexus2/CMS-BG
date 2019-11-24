@@ -1,0 +1,15 @@
+{
+    "1": {
+        "method": "update",
+        "params": [
+            "donate_gateways",
+            {
+                "gw_email": "paymentwall"
+            },
+            [
+                "gw_file=?",
+                "paymentwall"
+            ]
+        ]
+    }
+}

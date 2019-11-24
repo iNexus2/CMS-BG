@@ -1,0 +1,16 @@
+{
+    "messages": {
+        "messages": {
+            "tab": "community",
+            "controller": "messages",
+            "do": "",
+            "restriction": "messages_manage"
+        },
+        "settings": {
+            "tab": "community",
+            "controller": "settings",
+            "do": "",
+            "restriction": "settings_manage"
+        }
+    }
+}

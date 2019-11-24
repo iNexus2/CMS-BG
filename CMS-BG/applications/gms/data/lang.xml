@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="gms" version="100006">
+  <word key="__app_gms" js="0">Messages - webflake.sx</word>
+  <word key="menu__gms_messages" js="0">Messages</word>
+  <word key="menu__gms_messages_messages" js="0">Messages</word>
+  <word key="menu__gms_messages_settings" js="0">Settings</word>
+  <word key="module__messages_messages" js="0">Messages</word>
+  <word key="module__messages_settings" js="0">Settings</word>
+  <word key="r__gms_manage" js="0">Manage messages</word>
+  <word key="add_message" js="0">Add Message</word>
+  <word key="message" js="0">Message</word>
+  <word key="settings" js="0">Settings</word>
+  <word key="status" js="0">Enable message?</word>
+  <word key="title" js="0">Title</word>
+  <word key="message_placeholder" js="0">Add your message.</word>
+  <word key="show_title" js="0">Show title?</word>
+  <word key="days_joined" js="0">Days Joined</word>
+  <word key="days_joined_desc" js="0">Show this message to members who have joined within the specified number of days.</word>
+  <word key="days" js="0">Days</word>
+  <word key="pages" js="0">Show where?</word>
+  <word key="perms" js="0">Show to which groups?</word>
+  <word key="perms_unlimitedLang" js="0">Show to all groups.</word>
+  <word key="forums_zeroVal" js="0">Show in all forums.</word>
+  <word key="skins" js="0">Show in which skins?</word>
+  <word key="skins_zeroVal" js="0">Show in all skins.</word>
+  <word key="message_style" js="0">Message Style</word>
+  <word key="message_style_desc" js="0">If other, enter the name of your css class.</word>
+  <word key="style_normal" js="0">Normal Block</word>
+  <word key="style_message" js="0">Info Message</word>
+  <word key="style_error" js="0">Error Message</word>
+  <word key="style_other" js="0">Other</word>
+  <word key="style_success" js="0">Success Message</word>
+  <word key="style_warning" js="0">Warning Message</word>
+  <word key="general_settings" js="0">General Settings</word>
+  <word key="gms_enable" js="0">Enable message hook?</word>
+  <word key="gms_enable_desc" js="0">Will enable the main message hook. Disable if you want to add your messages through widgets instead.</word>
+  <word key="gms_include_global_title" js="0">Include global title?</word>
+  <word key="gms_include_global_title_desc" js="0">Add a global title above your messages?</word>
+  <word key="gms_collapse" js="0">Allow collapse of messages?</word>
+  <word key="gms_orderby" js="0">Order to sort messages</word>
+  <word key="gms_orderby_random" js="0">Random</word>
+  <word key="gms_orderby_position" js="0">Position</word>
+  <word key="gms_limit" js="0">Number of messages to show</word>
+  <word key="gms_title" js="0">Global title</word>
+  <word key="block_messageBlock" js="0">Message Block</word>
+  <word key="block_messageBlock_desc" js="0">Add any message from the Messages application.</word>
+  <word key="message_zeroVal" js="0">Show messages randomly.</word>
+ </app>
+</language>

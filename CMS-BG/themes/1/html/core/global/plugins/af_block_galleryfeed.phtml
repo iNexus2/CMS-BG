@@ -1,0 +1,13 @@
+<ips:template parameters="" />
+{{if settings.af_gallery == 1}}
+	<div class='ipsColumn ipsColumn_wide galleryCol articleCol'>
+		<div class="galleryBlo">
+			{block="Footer_Gallery"}
+		</div>
+		{{if settings.af_articles == '1' and settings.af_arti_galle_col == '1'}}
+			<div class="articlesBlo">
+				{block="Footer_Articles"}
+			</div>
+		{{endif}}
+	</div>           
+{{endif}}

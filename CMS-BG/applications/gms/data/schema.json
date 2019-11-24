@@ -1,0 +1,177 @@
+{
+    "gms_messages": {
+        "name": "gms_messages",
+        "columns": {
+            "id": {
+                "allow_null": false,
+                "auto_increment": true,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": null,
+                "length": 5,
+                "name": "id",
+                "type": "INT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "forums": {
+                "allow_null": true,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": null,
+                "length": 0,
+                "name": "forums",
+                "type": "TEXT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "perms": {
+                "allow_null": true,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": null,
+                "length": 255,
+                "name": "perms",
+                "type": "VARCHAR",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "status": {
+                "allow_null": false,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": "0",
+                "length": 1,
+                "name": "status",
+                "type": "TINYINT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "position": {
+                "allow_null": false,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": "1",
+                "length": 5,
+                "name": "position",
+                "type": "INT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "show_title": {
+                "allow_null": false,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": "1",
+                "length": 1,
+                "name": "show_title",
+                "type": "TINYINT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "skins": {
+                "allow_null": true,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": null,
+                "length": 255,
+                "name": "skins",
+                "type": "VARCHAR",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "options": {
+                "allow_null": true,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": null,
+                "length": 0,
+                "name": "options",
+                "type": "TEXT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            },
+            "days_joined": {
+                "allow_null": false,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": "0",
+                "length": 5,
+                "name": "days_joined",
+                "type": "MEDIUMINT",
+                "unsigned": false,
+                "values": [
+
+                ],
+                "zerofill": false
+            }
+        },
+        "indexes": {
+            "PRIMARY": {
+                "type": "primary",
+                "name": "PRIMARY",
+                "length": [
+                    null
+                ],
+                "columns": [
+                    "id"
+                ]
+            }
+        },
+        "comment": "",
+        "inserts": [
+            {
+                "id": "1",
+                "forums": "*",
+                "perms": "*",
+                "status": "1",
+                "position": "1",
+                "show_title": "1",
+                "skins": "*",
+                "options": "{\"message_style\":\"1\"}",
+                "days_joined": "0"
+            }
+        ]
+    }
+}

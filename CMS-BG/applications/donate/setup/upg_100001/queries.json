@@ -1,0 +1,705 @@
+{
+    "1": {
+        "method": "insert",
+        "params": [
+            "core_widget_areas",
+            {
+                "app": "donate",
+                "module": "donate",
+                "controller": "index",
+                "widgets": "[{\"app\":\"donate\",\"key\":\"donateStats\",\"unique\":\"bmaub670j\",\"configuration\":[]}]",
+                "area": "footer"
+            }
+        ]
+    },
+    "2": {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "donate",
+                "word_key": "dt_topic_title_value",
+                "word_default": "New donation from %member_name%",
+                "word_custom": "New donation from %member_name%",
+                "word_export": 0
+            }
+        ]
+    },
+    "3": {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "donate",
+                "word_key": "dt_topic_message_value",
+                "word_default": "<p>Hi %member_name%,<\/p><p>Thank you for your donation of %amount%. We look forward to improving the forums with your donation.<\/p><p>Thanks %board_name%<\/p>",
+                "word_custom": "<p>Hi %member_name%,<\/p><p>Thank you for your donation of %amount%. We look forward to improving the forums with your donation.<\/p><p>Thanks %board_name%<\/p>",
+                "word_export": 0
+            }
+        ]
+    },
+    "4": {
+        "method": "insert",
+        "params": [
+            "core_widget_areas",
+            {
+                "app": "donate",
+                "module": "donate",
+                "controller": "index",
+                "widgets": "[{\"app\":\"donate\",\"key\":\"donateDonate\",\"unique\":\"j8i8oecze\",\"configuration\":[]},{\"app\":\"donate\",\"key\":\"donateDonations\",\"unique\":\"3b71iev5c\",\"configuration\":{\"d_goal\":0,\"d_limit\":5,\"d_type\":\"2\"}}]",
+                "area": "sidebar"
+            }
+        ]
+    },
+    "5": {
+        "method": "changeColumn",
+        "params": [
+            "donate_logs",
+            "author_name",
+            {
+                "name": "author_name",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "6": {
+        "method": "changeColumn",
+        "params": [
+            "donate_logs",
+            "post_data",
+            {
+                "name": "post_data",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "7": {
+        "method": "changeColumn",
+        "params": [
+            "donate_logs",
+            "problem",
+            {
+                "name": "problem",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "8": {
+        "method": "changeColumn",
+        "params": [
+            "donate_demote",
+            "original_group2",
+            {
+                "name": "original_group2",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "9": {
+        "method": "changeColumn",
+        "params": [
+            "donate_demote",
+            "new_group2",
+            {
+                "name": "new_group2",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "10": {
+        "method": "changeColumn",
+        "params": [
+            "donate_demote",
+            "demote_group2",
+            {
+                "name": "demote_group2",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "11": {
+        "method": "dropColumn",
+        "params": [
+            "donate_demote",
+            "member_name"
+        ]
+    },
+    "12": {
+        "method": "dropColumn",
+        "params": [
+            "donate_goals",
+            "g_forever"
+        ]
+    },
+    "13": {
+        "method": "dropColumn",
+        "params": [
+            "donate_goals",
+            "g_done"
+        ]
+    },
+    "14": {
+        "method": "addColumn",
+        "params": [
+            "donate_goals",
+            {
+                "name": "g_force",
+                "type": "TINYINT",
+                "length": 1,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "1",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "15": {
+        "method": "changeColumn",
+        "params": [
+            "donate_logs",
+            "date",
+            {
+                "name": "date",
+                "type": "INT",
+                "length": 10,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "16": {
+        "method": "changeColumn",
+        "params": [
+            "donate_logs",
+            "ip_address",
+            {
+                "name": "ip_address",
+                "type": "VARCHAR",
+                "length": 46,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "0.0.0.0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "17": {
+        "method": "changeColumn",
+        "params": [
+            "donate_users",
+            "date",
+            {
+                "name": "date",
+                "type": "INT",
+                "length": 10,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "18": {
+        "method": "changeColumn",
+        "params": [
+            "donate_currency",
+            "c_name",
+            {
+                "name": "c_name",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "19": {
+        "method": "changeColumn",
+        "params": [
+            "donate_currency",
+            "c_tag",
+            {
+                "name": "c_tag",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "20": {
+        "method": "changeColumn",
+        "params": [
+            "donate_currency",
+            "c_symbol",
+            {
+                "name": "c_symbol",
+                "type": "CHAR",
+                "length": 10,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "21": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_name",
+            {
+                "name": "gw_name",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "22": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_file",
+            {
+                "name": "gw_file",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "23": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_summary",
+            {
+                "name": "gw_summary",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "24": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_email",
+            {
+                "name": "gw_email",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "25": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_seller_id",
+            {
+                "name": "gw_seller_id",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "26": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "views",
+            {
+                "name": "g_views",
+                "type": "MEDIUMINT",
+                "length": 5,
+                "decimals": null,
+                "values": [],
+                "allow_null": false,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "27": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "seo_name",
+            {
+                "name": "g_seo_name",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "28": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "goal_status",
+            {
+                "name": "g_goal_status",
+                "type": "DECIMAL",
+                "length": 10,
+                "decimals": 2,
+                "values": [],
+                "allow_null": true,
+                "default": "0.00",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "29": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "featured",
+            {
+                "name": "g_featured",
+                "type": "TINYINT",
+                "length": 1,
+                "decimals": null,
+                "values": [],
+                "allow_null": false,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "30": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "donations",
+            {
+                "name": "g_donations",
+                "type": "INT",
+                "length": 10,
+                "decimals": null,
+                "values": [],
+                "allow_null": false,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "31": {
+        "method": "changeColumn",
+        "params": [
+            "donate_rewards",
+            "promote_primary",
+            {
+                "name": "promote_primary",
+                "type": "MEDIUMTEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "32": {
+        "method": "changeColumn",
+        "params": [
+            "donate_rewards",
+            "promote_secondary",
+            {
+                "name": "promote_secondary",
+                "type": "MEDIUMTEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "33": {
+        "method": "changeColumn",
+        "params": [
+            "donate_rewards",
+            "promote_primary_exclude",
+            {
+                "name": "promote_primary_exclude",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "34": {
+        "method": "changeColumn",
+        "params": [
+            "donate_rewards",
+            "promote_secondary_exclude",
+            {
+                "name": "promote_secondary_exclude",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "35": {
+        "method": "changeColumn",
+        "params": [
+            "donate_users",
+            "member_name",
+            {
+                "name": "member_name",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "36": {
+        "method": "changeColumn",
+        "params": [
+            "donate_users",
+            "note",
+            {
+                "name": "note",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "37": {
+        "method": "addColumn",
+        "params": [
+            "donate_users",
+            {
+                "name": "topic_id",
+                "type": "INT",
+                "length": 10,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    }
+}

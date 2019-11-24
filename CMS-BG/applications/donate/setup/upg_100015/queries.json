@@ -1,0 +1,30 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_send_donations",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "2": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_moderate_donations",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 0,
+                "unsigned": true
+            }
+        ]
+    }
+}

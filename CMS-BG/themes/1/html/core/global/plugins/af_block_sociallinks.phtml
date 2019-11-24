@@ -1,0 +1,9 @@
+<ips:template parameters="" />
+{{if settings.af_sociallinkstoggle == 1}}
+	<div class='ipsColumn ipsColumn_wide sociallinksCol'>
+		<div class="sociallinksBlo">
+			{{if settings.af_socialheader}}<h3>{setting="af_socialheader"}</h3>{{endif}}
+			{setting="af_sociallinks"}
+		</div>
+	</div>
+{{endif}}

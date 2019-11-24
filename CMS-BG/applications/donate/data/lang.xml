@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="donate" version="100018">
+  <word key="__app_donate" js="0">Donations</word>
+  <word key="frontnavigation_donate" js="0">Donations</word>
+  <word key="module__donate_donate" js="0">Donations</word>
+  <word key="menutab__donate" js="0">Donations</word>
+  <word key="menutab__donate_icon" js="0">dollar</word>
+  <word key="menu__donate_donations" js="0">Donations</word>
+  <word key="menu__donate_donations_donations" js="0">Donations</word>
+  <word key="menu__donate_donations_logs" js="0">Payment Logs</word>
+  <word key="menu__donate_donations_promotions" js="0">Current Promotions</word>
+  <word key="menu__donate_donations_settings" js="0">Settings</word>
+  <word key="menu__donate_setup" js="0">Setup</word>
+  <word key="menu__donate_setup_currencies" js="0">Currencies</word>
+  <word key="menu__donate_setup_gateways" js="0">Payment Gateways</word>
+  <word key="menu__donate_setup_rewards" js="0">Member Rewards</word>
+  <word key="menu__donate_setup_autoreset" js="0">Automatic Reset</word>
+  <word key="menu__donate_setup_permissions" js="0">Group Permissions</word>
+  <word key="menu__donate_goals" js="0">Goals</word>
+  <word key="menu__donate_goals_goals" js="0">Goals</word>
+  <word key="menu__donate_goals_settings" js="0">Settings</word>
+  <word key="group__donate_Donate" js="0">Donations</word>
+  <word key="page__donations" js="0">All Donations</word>
+  <word key="page__top_donors" js="0">Top Donors</word>
+  <word key="page__goals" js="0">All Goals</word>
+  <word key="module__setup_autoreset" js="0">Automatic Reset</word>
+  <word key="donate" js="0">Donate</word>
+  <word key="editor__donate_Goals" js="0">Goals</word>
+  <word key="profile_donate_Donate" js="0">Donations</word>
+  <word key="profile_donate_DonateChanges" js="0">Donation Changes</word>
+  <word key="loc_donate_index" js="0">Viewing Donation Index</word>
+  <word key="loc_donate_donations" js="0">Viewing Donations</word>
+  <word key="loc_donate_goals" js="0">Viewing Donation Goals</word>
+  <word key="loc_donate_topdonors" js="0">Viewing Top Donors</word>
+  <word key="loc_donate_viewing_goal" js="0">Viewing Donation Goal: %s</word>
+  <word key="donor_title" js="0">Member has made a donation.</word>
+  <word key="member_donor" js="0">Donor</word>
+  <word key="donate_member_donations" js="0">Donations</word>
+  <word key="donate_c_new_amount" js="0">Donation Total</word>
+  <word key="donate_c_notes" js="0">Change Notes</word>
+  <word key="donate_c_notes_desc" js="0">Any notes to leave with this change?</word>
+  <word key="donate_edit_donation_total" js="0">Edit Total</word>
+  <word key="donate_no_transfer_found" js="0">Donation transfer can not found.</word>
+  <word key="donate_send_note" js="0">Sent to: </word>
+  <word key="latest_goals_rss" js="0">Latest Goals</word>
+  <word key="latest_donations_rss" js="0">Latest Donations</word>
+  <word key="percent_of_goal_reached" js="0">percent of goal reached.</word>
+  <word key="anonymous_donation" js="0">Anonymous donation</word>
+  <word key="anonymous_donation_amount" js="0">Anonymous amount</word>
+  <word key="approved" js="0">Approved</word>
+  <word key="unapproved" js="0">Unapproved</word>
+  <word key="offline_donation" js="0">Offline Donation</word>
+  <word key="goal_starts" js="0">Goal starts</word>
+  <word key="and_ends" js="0">and ends</word>
+  <word key="donate_of" js="0">of</word>
+  <word key="goal_reached" js="0">goal reached.</word>
+  <word key="donate_now" js="0">Donate Now</word>
+  <word key="donation_success_message" js="0">Thank you, donation will now be reviewed.</word>
+  <word key="return_donations" js="0">Return to Donations</word>
+  <word key="donate_guest" js="0">Guest</word>
+  <word key="no_active_goals" js="0">No active goals to display.</word>
+  <word key="anonymous_donation_tag" js="0">Anonymous</word>
+  <word key="donation_not_found" js="0">Donation not found.</word>
+  <word key="promotion_not_found" js="0">Promotion not found.</word>
+  <word key="rss_offline" js="0">This RSS feed is disabled</word>
+  <word key="donate_error" js="0">Your user group can not donate.</word>
+  <word key="gateways_required" js="0">Can not continue without a gateway.</word>
+  <word key="gateways_required_admin" js="0"><![CDATA[Can not continue without a gateway. Make sure you have at least one enabled in ACP > Donations > Setup > Payment Gateways]]></word>
+  <word key="minimum_amount_required" js="0">The minimum donation amount is %s</word>
+  <word key="amount_required" js="0">Please fill or select an amount to donate.</word>
+  <word key="currency_required" js="0">Please select a currency to donate.</word>
+  <word key="gateway_required" js="0">Please select a gateway to donate.</word>
+  <word key="reward_amount_overlap" js="0">Please adjust your amount range to not overlap with an existing reward.</word>
+  <word key="donate_no_managetotal_perms" js="0">You do not have permission to manage donation totals.</word>
+  <word key="r__donations" js="0">Donations</word>
+  <word key="r__logs" js="0">Logs</word>
+  <word key="r__promotions" js="0">Promotions</word>
+  <word key="r__settings" js="0">Settings</word>
+  <word key="r__currencies" js="0">Currencies</word>
+  <word key="r__gateways" js="0">Gateways</word>
+  <word key="r__rewards" js="0">Rewards</word>
+  <word key="r__autoreset" js="0">Automatic Reset</word>
+  <word key="r__permissions" js="0">Permissions</word>
+  <word key="r__goals" js="0">Goals</word>
+  <word key="r__donations_manage" js="0">Can manage donations?</word>
+  <word key="r__logs_manage" js="0">Can manage logs?</word>
+  <word key="r__promotions_manage" js="0">Can manage promotions?</word>
+  <word key="r__settings_manage" js="0">Can manage settings?</word>
+  <word key="r__currencies_manage" js="0">Can manage currencies?</word>
+  <word key="r__gateways_manage" js="0">Can manage gateways?</word>
+  <word key="r__rewards_manage" js="0">Can manage rewards?</word>
+  <word key="r__autoreset_manage" js="0">Can manage automatic reset?</word>
+  <word key="r__permissions_manage" js="0">Can manage permissions?</word>
+  <word key="r__goals_manage" js="0">Can manage goals?</word>
+  <word key="donationlog__emptypost" js="0">Empty POST Error</word>
+  <word key="donationlog__emptypost_desc" js="0">No post data provided.</word>
+  <word key="donationlog__gateway" js="0">Gateway Error</word>
+  <word key="donationlog__auth" js="0">Auth Error</word>
+  <word key="donationlog__process" js="0">Process Error</word>
+  <word key="donationlog__gateway_mismatch" js="0">Gateway Email Mismatch</word>
+  <word key="donationlog__gateway_mismatch_desc" js="0">Gateway address does not match.</word>
+  <word key="donationlog__goalemail_mismatch" js="0">Goal Email Mismatch</word>
+  <word key="donationlog__goalemail_mismatch_desc" js="0">Goal email address does not match.</word>
+  <word key="donationlog__txn" js="0">TXN Error</word>
+  <word key="donationlog__txn_desc" js="0">Duplicate txn id detected.</word>
+  <word key="donationlog__currency" js="0">Currency Error</word>
+  <word key="donationlog__member" js="0">Member Error</word>
+  <word key="donationlog__goal" js="0">Goal Error</word>
+  <word key="donationlog__donation" js="0">Donation Error</word>
+  <word key="donationlog__reward" js="0">Reward Error</word>
+  <word key="donationlog__success" js="0">Success</word>
+  <word key="donationlogs" js="0">Payment Logs</word>
+  <word key="donationlogs_author_id" js="0">Member</word>
+  <word key="donationlogs_problem" js="0">Problem</word>
+  <word key="donationlogs_date" js="0">Log Date</word>
+  <word key="donationlogs_ip_address" js="0">IP Address</word>
+  <word key="donationlogs_post_data" js="0">Log Data</word>
+  <word key="dttag_member_name" js="0">Member Name</word>
+  <word key="dttag_amount" js="0">Amount</word>
+  <word key="dttag_board_name" js="0">Board Name</word>
+  <word key="dttag_currency" js="0">Currency</word>
+  <word key="dt_donation_reset" js="0">Choose reset date</word>
+  <word key="dt_donation_reset_settings" js="0">Choose automatic settings</word>
+  <word key="dt_donation_reset_settings_desc" js="0">Enter and select a time frame when the automatic reset will run.</word>
+  <word key="dt_goal_reset" js="0">Choose reset date</word>
+  <word key="dt_goal_reset_settings" js="0">Choose automatic settings</word>
+  <word key="dt_goal_reset_settings_desc" js="0">Enter and select a time frame when the automatic reset will run.</word>
+  <word key="reset_remove" js="0">(Remove)</word>
+  <word key="donations_autoreset" js="0">Donations made before the below choosen date will not be displayed or counted against any donation totals.</word>
+  <word key="goals_autoreset" js="0"><![CDATA[Goals and there donations made before the below choosen date will not be displayed or counted against any donation totals. <strong>Only enable a goal reset if you want to disable the actual goal from showing.</strong>]]></word>
+  <word key="day_of_the" js="0">day of the</word>
+  <word key="reset_week" js="0">Week</word>
+  <word key="reset_month" js="0">Month</word>
+  <word key="reset_year" js="0">Year</word>
+  <word key="new_donation_promotion_pm_subject" js="0">Donation Promotion</word>
+  <word key="new_donation_promotion_pm_message" js="0">Your member group has been upgraded as part of a recent donation promotion.</word>
+  <word key="currencies" js="0">Currencies</word>
+  <word key="add_currency" js="0">Add Currency</word>
+  <word key="edit_currency" js="0">Edit Currency</word>
+  <word key="name" js="0">Name</word>
+  <word key="name_desc" js="0">Enter the full name of the currency.</word>
+  <word key="tag" js="0">Tag</word>
+  <word key="tag_desc" js="0">Enter the currency code (ISO 4217 Code).</word>
+  <word key="rate" js="0">Rate</word>
+  <word key="rate_desc" js="0">Currency rate in relation to your default currency. e.g. 1 USD = 1 USD</word>
+  <word key="symbol" js="0">Symbol</word>
+  <word key="symbol_desc" js="0">Enter the currency symbol.</word>
+  <word key="payment_gateways" js="0">Payment Gateways</word>
+  <word key="add_gateway" js="0">Add Gateway</word>
+  <word key="gw_name" js="0">Name</word>
+  <word key="gw_file" js="0">File Name</word>
+  <word key="gw_file_desc" js="0">Enter the name of the file (without .php) in the payment gateway folder: </word>
+  <word key="gw_email" js="0">Email Address</word>
+  <word key="gw_email_desc" js="0">Enter your gateway email address or id key.</word>
+  <word key="gw_active" js="0">Enabled</word>
+  <word key="gw_active_desc" js="0">Is this gateway avaliable for use?</word>
+  <word key="gw_dev" js="0">Developer Mode</word>
+  <word key="gw_dev_desc" js="0">Use your gateways developer or sandbox function?</word>
+  <word key="gw_summary" js="0">Summary</word>
+  <word key="gw_summary_desc" js="0">Quick summary of gateway to display to members.</word>
+  <word key="gateway_settings" js="0">Gateway Settings</word>
+  <word key="gateway_instructions" js="0">Gateway Instructions</word>
+  <word key="gateway_fields" js="0">Gateway Fields</word>
+  <word key="secret_word" js="0">Secret Word</word>
+  <word key="secret_word_desc" js="0">Please enter the secret word you setup in the merchant tools section of the Skrill website.</word>
+  <word key="api_key" js="0">API Key</word>
+  <word key="api_secretkey" js="0">API Secret Key</word>
+  <word key="widget_code" js="0">Widget Code</word>
+  <word key="gw_emails_enable" js="0">Enable multiple recipients?</word>
+  <word key="gw_emails_enable_desc" js="0"><![CDATA[Allow multiple recipients to be selected for donation? <strong>This setting will override the default gateway address/id you have set.</strong>]]></word>
+  <word key="gw_emails" js="0">Recipients Emails</word>
+  <word key="gw_emails_desc" js="0">Recipients gateway email address or id key.</word>
+  <word key="form_key_value_key" js="0">Name</word>
+  <word key="form_key_value_value" js="0">Email/ID</word>
+  <word key="group_promotions" js="0">Group Promotions</word>
+  <word key="demote_member_id" js="0">Member</word>
+  <word key="demote_member_name" js="0">Member</word>
+  <word key="demote_date_added" js="0">Date Promoted</word>
+  <word key="demote_demote_date" js="0">Demotion Date</word>
+  <word key="demote_original_group" js="0">Original Group</word>
+  <word key="demote_new_group" js="0">Promoted Group</word>
+  <word key="demote_demote_group" js="0">Demotion Group</word>
+  <word key="edit_promotion" js="0">Edit Promotion</word>
+  <word key="promotion_settings" js="0">Promotion Settings</word>
+  <word key="primary_group" js="0">Primary Group</word>
+  <word key="secondary_groups" js="0">Secondary Groups</word>
+  <word key="member_id" js="0">Member</word>
+  <word key="date_added" js="0">Date Promoted</word>
+  <word key="demote_date" js="0">Demotion Date</word>
+  <word key="original_group" js="0">Original Group</word>
+  <word key="new_group" js="0">Promoted Group</word>
+  <word key="demote_group" js="0">Demotion Group</word>
+  <word key="original_group2" js="0">Original Groups</word>
+  <word key="new_group2" js="0">Promoted Groups</word>
+  <word key="demote_group2" js="0">Demotion Groups</word>
+  <word key="donate_rewards" js="0">Member Rewards</word>
+  <word key="reward_title" js="0">Reward Title</word>
+  <word key="reward_active" js="0">Active</word>
+  <word key="reward_general_header" js="0">General</word>
+  <word key="reward_promotion_header" js="0">Promotion</word>
+  <word key="reward_amount_range" js="0">Amount Range</word>
+  <word key="reward_promote_enable" js="0">Enable promotion?</word>
+  <word key="reward_promote_options" js="0">Options</word>
+  <word key="reward_promote_options_desc" js="0">If you select per amount or donation, you'll need to enter the number of days a member is promoted for each donation they make or amount (dollar) they donate.</word>
+  <word key="reward_permanent_promotion" js="0">Permanent Promotion</word>
+  <word key="reward_per_amount" js="0">Per Amount</word>
+  <word key="reward_per_donation" js="0">Per Donation</word>
+  <word key="reward_promote_extension" js="0">Promotion Extension</word>
+  <word key="reward_promote_extension_desc" js="0">Extend group promotion if member donates again while promoted?</word>
+  <word key="reward_promote_days_primary" js="0">Promote Primary</word>
+  <word key="reward_promote_days_secondary" js="0">Promote Secondary</word>
+  <word key="reward_promote_primary" js="0">Primary Group</word>
+  <word key="reward_promote_primary_exclude" js="0">Primary Group Exclude</word>
+  <word key="reward_promote_primary_exclude_desc" js="0">Select which primary groups are excluded from this promotion.</word>
+  <word key="reward_promote_secondary" js="0">Secondary Groups</word>
+  <word key="reward_promote_secondary_exclude" js="0">Secondary Groups Exclude</word>
+  <word key="reward_promote_secondary_exclude_desc" js="0">Select which secondary groups are excluded from this promotion.</word>
+  <word key="reward_days" js="0">Days</word>
+  <word key="goal_settings" js="0">Goal Settings</word>
+  <word key="dt_goal_close" js="0">Close achieved goals?</word>
+  <word key="dt_goal_close_desc" js="0">Remove a goal once it has reached 100%?</word>
+  <word key="dt_member_rewards_total_donations" js="0">Award based on total donations?</word>
+  <word key="dt_member_rewards_total_donations_desc" js="0">Give out member group upgrades based on a members total donations rather then each individual donation.</word>
+  <word key="dt_latest_goals" js="0">Number of goals to show?</word>
+  <word key="dt_goal_total" js="0">Manual Goal Total</word>
+  <word key="dt_goal_total_desc" js="0">Instead of using the sum of existing active goals, you can manually enter a fixed goal total.</word>
+  <word key="dt_enable_goal_rss" js="0">Enable goals RSS feed?</word>
+  <word key="donation_settings" js="0">Donation Settings</word>
+  <word key="dt_amounts" js="0">Donation amounts</word>
+  <word key="dt_amounts_null" js="0">Enter amount</word>
+  <word key="dt_min_donation" js="0">Minimum Donation</word>
+  <word key="dt_anon_donation" js="0">Enable anonymous donations?</word>
+  <word key="dt_anon_donation_amount" js="0">Enable anonymous amount?</word>
+  <word key="dt_include_fees" js="0">Include gateway fees?</word>
+  <word key="dt_include_fees_desc" js="0">Include gateway fees in total calculations?</word>
+  <word key="dt_default_currency" js="0">Default currency</word>
+  <word key="dt_create_topic" js="0">Create topic donations?</word>
+  <word key="dt_topic_author" js="0">Topic Author</word>
+  <word key="dt_topic_title" js="0">Topic Title</word>
+  <word key="dt_create_topic_forum" js="0">Topic Forum</word>
+  <word key="dt_topic_message" js="0">Topic Post</word>
+  <word key="dt_enable_donation_rss" js="0">Enable donations RSS feed?</word>
+  <word key="dt_hide_topic_hook" js="0">Hide topic hook?</word>
+  <word key="dt_hide_topic_hook_desc" js="0">Hide donor status from showing in members posts?</word>
+  <word key="donation_alerts" js="0">Alert Settings</word>
+  <word key="dt_new_donation_pm" js="0">Send new donation pm?</word>
+  <word key="dt_new_donation_pm_desc" js="0">Do you want to sender donors a pm message?</word>
+  <word key="dt_new_promotion_pm" js="0">Send promotion pm?</word>
+  <word key="dt_new_promotion_pm_desc" js="0">Do you want to send donors a pm message when they are promoted?</word>
+  <word key="dt_pm_sender" js="0">PM Sender</word>
+  <word key="dt_pm_sender_desc" js="0">Enter the name of the member who will appear as the PM sender</word>
+  <word key="dt_create_own_topic" js="0">Create own topic?</word>
+  <word key="dt_create_own_topic_desc" js="0">Use donor as topic author?</word>
+  <word key="donate_topic_settings_header" js="0">Topic Settings</word>
+  <word key="donate_pm_settings_header" js="0">PM Settings</word>
+  <word key="dt_new_donation_pm_subject" js="0">New PM Subject</word>
+  <word key="dt_new_donation_pm_message" js="0">New PM Message</word>
+  <word key="dt_new_donation_pm_subject_desc" js="0">Enter the subject the new donation pm will use.</word>
+  <word key="dt_new_donation_pm_message_desc" js="0">Enter the message the new donation pm will use.</word>
+  <word key="goals" js="0">Goals</word>
+  <word key="add_goal" js="0">Add Goal</word>
+  <word key="edit_goal" js="0">Edit Goal</word>
+  <word key="goal_name" js="0">Name</word>
+  <word key="goal_amount" js="0">Target</word>
+  <word key="goal_cur" js="0">Currency</word>
+  <word key="goal_cur_desc" js="0">Select the primary currency of this goal.</word>
+  <word key="goal_date_range" js="0">Start / Finish</word>
+  <word key="goal_date_range_desc" js="0">When will this goal start and end? Leave the end date empty to run this goal continuously.</word>
+  <word key="goal_show" js="0">Show Goal?</word>
+  <word key="goal_show_desc" js="0">Can this goal be shown and avaliable for donating?</word>
+  <word key="goal_private" js="0">Private Goal?</word>
+  <word key="goal_private_desc" js="0">Do you want to hide the amounts related to this goal?</word>
+  <word key="goal_featured" js="0">Featured Goal?</word>
+  <word key="goal__desc" js="0">Description</word>
+  <word key="desc_placeholder" js="0">Add details about the goal here.</word>
+  <word key="goal_force" js="0">Force Open?</word>
+  <word key="goal_force_desc" js="0">Force open goal regardless target met?</word>
+  <word key="goalemails__paypal_settings" js="0">Paypal Settings</word>
+  <word key="goalemails__paypal" js="0">Paypal Email</word>
+  <word key="goalemails__paypal_desc" js="0">Set your Paypal email address donations will be sent to. Leave empty to use the default gateway settings.</word>
+  <word key="donate_permissions" js="0">Donations Permissions</word>
+  <word key="g_dt_view" js="0">Can view application?</word>
+  <word key="g_dt_donate" js="0">Can donate?</word>
+  <word key="g_dt_view_goals" js="0">Can view goals?</word>
+  <word key="g_dt_view_donations" js="0">Can view donations?</word>
+  <word key="g_dt_send_donations" js="0">Can send amounts?</word>
+  <word key="g_dt_send_donations_desc" js="0">Can members of this group send their donation total to other members?</word>
+  <word key="g_dt_moderate_donations" js="0">Can moderate totals?</word>
+  <word key="g_dt_moderate_donations_desc" js="0">Can members of this group modify a members donation totals?</word>
+  <word key="donations" js="0">Donations</word>
+  <word key="donation_member_id" js="0">Member</word>
+  <word key="donation_member_name" js="0">Member</word>
+  <word key="donation_member_id_desc" js="0">Leave empty if offline donation</word>
+  <word key="donation_date" js="0">Donated</word>
+  <word key="donation_goal" js="0">Goal</word>
+  <word key="donation_amount" js="0">Amount</word>
+  <word key="donation_note" js="0">Note</word>
+  <word key="donation_status" js="0">Approved</word>
+  <word key="donation_currency" js="0">Currency</word>
+  <word key="donation_fees" js="0">Fees</word>
+  <word key="add_donation" js="0">Add Donation</word>
+  <word key="edit_donation" js="0">Edit Donation</word>
+  <word key="delete_donation" js="0">Delete Donation</word>
+  <word key="basic_settings" js="0">Basic Settings</word>
+  <word key="advanced_settings" js="0">Advanced Settings</word>
+  <word key="donation_anon" js="0">Anonymous Member?</word>
+  <word key="donation_anon_amount" js="0">Anonymous Amount?</word>
+  <word key="donation_upgrade_group" js="0">Upgrade Member Group</word>
+  <word key="donation_upgrade_group_desc" js="0">Apply any member rewards you have set and upgrade member account?</word>
+  <word key="block_donateGoals" js="0">Donation Goals</word>
+  <word key="block_donateGoals_desc" js="0">Add a single or list of donation goals.</word>
+  <word key="select_goal" js="0">Select which goal to display</word>
+  <word key="select_goal_zeroVal" js="0">Use below filters and display list of goals.</word>
+  <word key="goal_limit" js="0">Number of goals to show?</word>
+  <word key="goal_type" js="0">What type of goals to show?</word>
+  <word key="latest_goals" js="0">Latest Goals</word>
+  <word key="featured_goals" js="0">Featured Goals</word>
+  <word key="block_donateStats" js="0">Donation Stats</word>
+  <word key="block_donateStats_desc" js="0">Add the total goal and donation statistics.</word>
+  <word key="total_goals" js="0">Total Goals</word>
+  <word key="total_donations" js="0">Total Donations</word>
+  <word key="total_fees" js="0">Total Fees</word>
+  <word key="block_donateDonate" js="0">Donation Box</word>
+  <word key="block_donateDonate_desc" js="0">Adds a donation box that members can donate from.</word>
+  <word key="enter_amount" js="0">Enter Amount</word>
+  <word key="block_donateDonations" js="0">Donation List</word>
+  <word key="block_donateDonations_desc" js="0">Add a list of latest donations or top donors.</word>
+  <word key="top_donors" js="0">Top Donors</word>
+  <word key="latest_donations" js="0">Latest Donations</word>
+  <word key="d_type" js="0">Type of block?</word>
+  <word key="d_limit" js="0">How many to show?</word>
+  <word key="d_goal" js="0">Filter by goal?</word>
+  <word key="d_goal_zeroVal" js="0">Select all goals.</word>
+  <word key="block_donateDonate_text" js="0"><![CDATA[Please donate to support the community.<br />We appreciate all donations!]]></word>
+  <word key="view_donations" js="0">View Donations</word>
+  <word key="view_top_donors" js="0">View Top Donors</word>
+  <word key="view_goals" js="0">View Goals</word>
+  <word key="still_needed" js="0">Still Needed</word>
+  <word key="block_donateSend" js="0">Donation Send</word>
+  <word key="block_donateSend_desc" js="0">Send donation totals to other members.</word>
+  <word key="block_donateSend_title" js="0">Send Donation Amount</word>
+  <word key="donate_send_donation" js="0">Send Amount</word>
+  <word key="donatesend_info" js="0"><![CDATA[You have <strong>%s</strong> in total donations to send to other members.]]></word>
+  <word key="donatesend_note_placeholder" js="0">Do you have any note to leave?</word>
+  <word key="donate_send_donation_total" js="0">Send Donation Total</word>
+  <word key="donatesend_member_id" js="0">Member</word>
+  <word key="donatesend_member_id_desc" js="0">Enter the name of the member who you are sending to.</word>
+  <word key="donatesend_amount" js="0">Amount</word>
+  <word key="donatesend_amount_desc" js="0">Enter how much you are sending to this member.</word>
+  <word key="donatesend_note" js="0">Send Note</word>
+  <word key="donatesend_note_desc" js="0">Any note to send with this transfer?</word>
+  <word key="donate_no_send_self" js="0">You can not send to yourself.</word>
+  <word key="donate_no_send_excess" js="0">You can not send more then your donation total.</word>
+  <word key="make_donation" js="0">Make Donation</word>
+  <word key="donation" js="0">Donation</word>
+  <word key="setup" js="0">Setup</word>
+  <word key="payment_screen" js="0">Payment Screen</word>
+  <word key="amount" js="0">Amount</word>
+  <word key="currency" js="0">Select currency</word>
+  <word key="goal" js="0">Select goal</word>
+  <word key="goal_desc" js="0"></word>
+  <word key="gateway" js="0">Select gateway</word>
+  <word key="pay_now" js="0">Pay Now</word>
+  <word key="forum_donation" js="0">Forum Donation</word>
+  <word key="note" js="0">Note</word>
+  <word key="note_placeholder" js="0">Add a public note for this donation.</word>
+  <word key="business" js="0">Recipient</word>
+  <word key="business_desc" js="0">Who do you want to make this donation to?</word>
+  <word key="anonymous" js="0">Anonymous donation?</word>
+  <word key="anonymous_amount" js="0">Anonymous amount?</word>
+  <word key="anonymous_desc" js="0">Hides your username from public display.</word>
+  <word key="anonymous_amount_desc" js="0">Hides the amount you donated from public display.</word>
+  <word key="os0" js="0">Anonymous donation?</word>
+  <word key="os1" js="0">Anonymous amount?</word>
+  <word key="os0_desc" js="0">Hides your username from public display.</word>
+  <word key="os1_desc" js="0">Hides the amount you donated from public display.</word>
+  <word key="detail2_text" js="0">Anonymous donation?</word>
+  <word key="detail3_text" js="0">Anonymous amount?</word>
+  <word key="detail2_text_desc" js="0">Hides your username from public display.</word>
+  <word key="detail3_text_desc" js="0">Hides the amount you donated from public display.</word>
+  <word key="apc_2" js="0">Anonymous donation?</word>
+  <word key="apc_3" js="0">Anonymous amount?</word>
+  <word key="apc_2_desc" js="0">Hides your username from public display.</word>
+  <word key="apc_3_desc" js="0">Hides the amount you donated from public display.</word>
+ </app>
+</language>

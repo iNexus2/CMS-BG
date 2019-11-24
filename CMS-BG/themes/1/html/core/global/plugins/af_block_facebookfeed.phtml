@@ -1,0 +1,22 @@
+<ips:template parameters="" />
+{{if settings.af_fb_toggle == 1}}
+	<div class='ipsColumn ipsColumn_wide facebookCol twitterCol'>
+		<div class="facebookBlo">
+			{{if settings.af_fb_header}}<h3>{setting="af_fb_header"}</h3>{{endif}}
+			<div class="fb-page" data-href="{setting="af_fb_page"}" 
+			{{if settings.af_fb_toggleacitivy == 1}}data-tabs="{setting="af_fb_activitytabs"}" 
+			data-height="{setting="af_fb_activityheight"}"{{endif}}
+			data-small-header="{{if settings.af_fb_smallheader == 1}}true {{else}}false{{endif}}"
+			data-adapt-container-width="true" 
+			data-hide-cover="false" 
+			data-show-facepile="{{if settings.af_fb_showfface == 1}}true {{else}}false{{endif}}">
+			</div>
+		</div>
+		{{if settings.af_twittertoggle == '1' and settings.af_fb_t_col == '1'}}
+			<div class="twitterBlo">
+				{{if settings.af_twitterheader}}<h3>{setting="af_twitterheader"}</h3>{{endif}}
+				<div id="twitterFeed"></div>
+			</div>
+		{{endif}}
+	</div>
+{{endif}}

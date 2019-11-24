@@ -1,0 +1,136 @@
+{
+    "1": {
+        "method": "createTable",
+        "params": [
+            {
+                "name": "donate_changes",
+                "columns": {
+                    "c_id": {
+                        "allow_null": false,
+                        "auto_increment": true,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": null,
+                        "length": 10,
+                        "name": "c_id",
+                        "type": "INT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_donor": {
+                        "allow_null": false,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": "0",
+                        "length": 10,
+                        "name": "c_donor",
+                        "type": "INT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_member": {
+                        "allow_null": false,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": "0",
+                        "length": 10,
+                        "name": "c_member",
+                        "type": "INT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_date": {
+                        "allow_null": false,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": "0",
+                        "length": 10,
+                        "name": "c_date",
+                        "type": "INT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_previous_amount": {
+                        "allow_null": false,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": 2,
+                        "default": "0.00",
+                        "length": 10,
+                        "name": "c_previous_amount",
+                        "type": "DECIMAL",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_new_amount": {
+                        "allow_null": false,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": 2,
+                        "default": "0.00",
+                        "length": 10,
+                        "name": "c_new_amount",
+                        "type": "DECIMAL",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_notes": {
+                        "allow_null": true,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": null,
+                        "length": 0,
+                        "name": "c_notes",
+                        "type": "TEXT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    },
+                    "c_approved": {
+                        "allow_null": true,
+                        "auto_increment": false,
+                        "binary": false,
+                        "comment": "",
+                        "decimals": null,
+                        "default": "1",
+                        "length": 1,
+                        "name": "c_approved",
+                        "type": "TINYINT",
+                        "unsigned": false,
+                        "values": [],
+                        "zerofill": false
+                    }
+                },
+                "indexes": {
+                    "PRIMARY": {
+                        "type": "primary",
+                        "name": "PRIMARY",
+                        "length": [
+                            null
+                        ],
+                        "columns": [
+                            "c_id"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

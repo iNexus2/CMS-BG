@@ -1,0 +1,55 @@
+<ips:template parameters="" />
+{{if settings.af_abouttoggle == 1}}
+	<div class='ipsColumn ipsColumn_wide aboutCol'>
+		<div class="aboutBlo">
+			{{if settings.af_aboutheader}}<h3>{setting="af_aboutheader"}</h3>{{endif}}
+			<section class='ipsType_normal ipsType_richText ipsType_break' {{if settings.af_abouttruncatetoggle == 1}}data-ipsTruncate data-ipsTruncate-size='{setting="af_abouttruncatelines"} lines' data-ipsTruncate-type='hide'{{endif}}>
+				{setting="af_aboutcontent"}
+			</section>
+		</div>
+		{{if settings.af_getintouchtoggle == '1' and settings.af_getintouinaboutus == '1'}}
+			<div class="getintouchBlo">
+				{{if settings.af_getintouchheader}}<h3>{setting="af_getintouchheader"}</h3>{{endif}}
+				<ul class="ipsDataList">
+					{setting="af_getintouch_content"}
+				</ul>
+			</div>
+		{{endif}}
+		{{if settings.af_stafftoggle == '1' and settings.af_staffinaboutus == '1'}}
+		<div class="staffBlo">
+			<ul class='ipsList_reset'>
+				{{if settings.af_staff_header}}<h3>{setting="af_staff_header"}</h3>{{endif}}
+				{{foreach explode("\n", settings.af_staff_members) as $members}}		
+					{{$member = \IPS\Member::load( $members );}}
+					<li class='{{if settings.af_staffshowimg == 1}}ipsPhotoPanel{{endif}}'>
+						<div class='staffMembers'>
+							{{if settings.af_staffshowimg == 1}} 
+								<div class="stphoto">{template="userPhoto" group="global" app="core" params="$member, 'tiny'"}</div>
+							{{endif}}
+							{{if settings.af_staffshowname == '1' or settings.af_staffshowgroup == '1'}}
+								<div class='staffName'>
+									{{if settings.af_staffshowname == 1}}{template="userLinkFromData" group="global" app="core" params="$member->member_id, $member->name, $member->members_seo_name, $member->member_group_id"}{{endif}}
+									{{if settings.af_staffshowgroup == 1}}<span class="groupName">{$member->groupName|raw}</span>{{endif}}
+								</div>
+							{{endif}}
+						</div>
+					</li> 
+				{{endforeach}}
+			</ul>
+			{{if settings.af_staffdesc}}
+				<section class='ipsType_normal ipsType_richText ipsType_break'>
+					{setting="af_staffdesc"}
+				</section>
+			{{endif}}
+		</div>
+		{{endif}} 
+		{{if settings.af_sociallinkstoggle == '1' and settings.af_sl_inaboutus == '1'}}
+			<div class="sociallinksCol">
+				<div class="sociallinksBlo">
+					{{if settings.af_socialheader}}<h3>{setting="af_socialheader"}</h3>{{endif}}
+					{setting="af_sociallinks"}
+				</div>
+			</div>
+		{{endif}}
+	</div>
+{{endif}}

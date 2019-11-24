@@ -1,0 +1,1 @@
+var ipsJavascriptMap={"core":{"global_core":"https://cms-bg.eu/uploads/javascript_core/global_global_core.js.d4a1d6791228e2130de10b85d39a9671.js","admin_core":"https://cms-bg.eu/uploads/javascript_core/admin_admin_core.js.db386ed54dc048dd91f4c9e7914b9449.js"}};;

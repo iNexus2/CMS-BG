@@ -1,0 +1,74 @@
+{
+    "donations": {
+        "donations": {
+            "tab": "donate",
+            "controller": "donations",
+            "do": "",
+            "restriction": "donations_manage"
+        },
+        "logs": {
+            "tab": "donate",
+            "controller": "logs",
+            "do": "",
+            "restriction": "logs_manage"
+        },
+        "promotions": {
+            "tab": "donate",
+            "controller": "promotions",
+            "do": "",
+            "restriction": "promotions_manage"
+        },
+        "settings": {
+            "tab": "donate",
+            "controller": "settings",
+            "do": "",
+            "restriction": "settings_manage"
+        }
+    },
+    "goals": {
+        "goals": {
+            "tab": "donate",
+            "controller": "goals",
+            "do": "",
+            "restriction": "goals_manage"
+        },
+        "settings": {
+            "tab": "donate",
+            "controller": "settings",
+            "do": "",
+            "restriction": "settings_manage"
+        }
+    },
+    "setup": {
+        "currencies": {
+            "tab": "donate",
+            "controller": "currencies",
+            "do": "",
+            "restriction": "currencies_manage"
+        },
+        "gateways": {
+            "tab": "donate",
+            "controller": "gateways",
+            "do": "",
+            "restriction": "gateways_manage"
+        },
+        "rewards": {
+            "tab": "donate",
+            "controller": "rewards",
+            "do": "",
+            "restriction": "rewards_manage"
+        },
+        "autoreset": {
+            "tab": "donate",
+            "controller": "autoreset",
+            "do": "",
+            "restriction": "autoreset_manage"
+        },
+        "permissions": {
+            "tab": "donate",
+            "controller": "permissions",
+            "do": "",
+            "restriction": "permissions_manage"
+        }
+    }
+}

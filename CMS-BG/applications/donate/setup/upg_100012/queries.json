@@ -1,0 +1,44 @@
+{
+    "1": {
+        "method": "changeColumn",
+        "params": [
+            "donate_gateways",
+            "gw_summary",
+            {
+                "name": "gw_summary",
+                "type": "TEXT",
+                "length": 255,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    },
+    "2": {
+        "method": "changeColumn",
+        "params": [
+            "donate_users",
+            "note",
+            {
+                "name": "note",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    }
+}

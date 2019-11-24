@@ -1,0 +1,3 @@
+var scrollToTopJS=(function($,window){$(document).ready(function(){$(document).on('scroll',function(){if($(window).scrollTop()>5){$('.scroll-top-wrapper').addClass('show');}else{$('.scroll-top-wrapper').removeClass('show');}});$('.scroll-top-wrapper').on('click',(function(){$('html, body').animate({scrollTop:0},250,'linear');}));});}(jQuery,window));;
+;(function($,_,undefined){"use strict";ips.controller.mixin('hideContentTopic','core.front.core.commentFeed',true,function(){this.before('quickReply',function(e){if(this.scope.find('[data-role="replyArea"]').attr('data-hasHiddenContent')=='true')
+{this.scope.find('[data-role="replyArea"] form').attr('data-noAjax','true');}});});}(jQuery,_));;

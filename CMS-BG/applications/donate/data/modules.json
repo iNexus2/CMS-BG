@@ -1,0 +1,22 @@
+{
+    "front": {
+        "donate": {
+            "default_controller": "index",
+            "protected": true
+        }
+    },
+    "admin": {
+        "donations": {
+            "default_controller": "donations",
+            "protected": 0
+        },
+        "setup": {
+            "default_controller": "currencies",
+            "protected": 0
+        },
+        "goals": {
+            "default_controller": "goals",
+            "protected": 0
+        }
+    }
+}

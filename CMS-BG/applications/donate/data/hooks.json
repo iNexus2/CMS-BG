@@ -1,0 +1,14 @@
+{
+    "donateTopicView": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_forums_front_topics"
+    },
+    "profileTemplate": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_core_front_profile"
+    },
+    "forceGuestAccess": {
+        "type": "C",
+        "class": "\\IPS\\Dispatcher\\Front"
+    }
+}

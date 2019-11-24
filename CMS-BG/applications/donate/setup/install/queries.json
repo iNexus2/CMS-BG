@@ -1,0 +1,142 @@
+{
+    "1": {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "donate",
+                "word_key": "donate_goal_1",
+                "word_default": "Example Goal",
+                "word_custom": "Example Goal",
+                "word_export": 0
+            }
+        ]
+    },
+    "2": {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "donate",
+                "word_key": "donate_goal_1_desc",
+                "word_default": "<p>Example goal for new installs.<\/p>",
+                "word_custom": "<p>Example goal for new installs.<\/p>",
+                "word_export": 0
+            }
+        ]
+    },
+    "3": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_view",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "4": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_donate",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "5": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_view_goals",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "6": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_view_donations",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "7": {
+        "method": "addColumn",
+        "params": [
+            "core_members",
+            {
+                "name": "donate_donations",
+                "type": "SMALLINT",
+                "length": 5,
+                "null": false,
+                "default": 0,
+                "unsigned": false
+            }
+        ]
+    },
+    "8": {
+        "method": "addColumn",
+        "params": [
+            "core_members",
+            {
+                "name": "donate_amount",
+                "type": "DECIMAL",
+                "length": "10,2",
+                "null": false,
+                "default": "0.00",
+                "unsigned": false
+            }
+        ]
+    },
+    "9": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_send_donations",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 1,
+                "unsigned": true
+            }
+        ]
+    },
+    "10": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_dt_moderate_donations",
+                "type": "TINYINT",
+                "length": 1,
+                "null": false,
+                "default": 0,
+                "unsigned": true
+            }
+        ]
+    }
+}

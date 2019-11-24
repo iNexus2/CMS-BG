@@ -1,0 +1,44 @@
+[
+    {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "gms",
+                "word_key": "gms_message_1",
+                "word_default": "Example Message",
+                "word_custom": "Example Message",
+                "word_export": 0
+            }
+        ]
+    },
+    {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "gms",
+                "word_key": "gms_message_1_message",
+                "word_default": "<p><strong>My example message.<\/strong> This is an example message.<\/p>",
+                "word_custom": "<p><strong>My example message.<\/strong> This is an example message.<\/p>",
+                "word_export": 0
+            }
+        ]
+    },
+    {
+        "method": "insert",
+        "params": [
+            "core_sys_lang_words",
+            {
+                "lang_id": 1,
+                "word_app": "gms",
+                "word_key": "gms_title_value",
+                "word_default": "%board_name% Messages",
+                "word_custom": "%board_name% Messages",
+                "word_export": 0
+            }
+        ]
+    }
+]

@@ -1,0 +1,23 @@
+{
+    "1": {
+        "method": "changeColumn",
+        "params": [
+            "donate_goals",
+            "g_received",
+            {
+                "name": "g_received",
+                "type": "DECIMAL",
+                "length": 10,
+                "decimals": 2,
+                "values": [],
+                "allow_null": true,
+                "default": "0.00",
+                "comment": "",
+                "unsigned": false,
+                "zerofill": false,
+                "auto_increment": false,
+                "binary": false
+            }
+        ]
+    }
+}

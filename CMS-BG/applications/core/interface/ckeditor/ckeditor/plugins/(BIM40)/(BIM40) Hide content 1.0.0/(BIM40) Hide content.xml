@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="(BIM40) Hide content" version_long="10000" version_human="1.0.0" author="onlyME" website="http://zuzu.vn" update_check=""><hooks><hook type="C" class="\IPS\forums\Topic\Post"><![CDATA[//<?php
+
+class hook147 extends _HOOK_CLASS_
+{
+	public function content()
+	{
+		try
+		{
+			$content = parent::content();
+			
+			if ( \IPS\Settings::i()->bim_hide_on == 1 )
+			{
+				if ( \IPS\Member::loggedIn()->member_id != $this->author_id && in_array(\IPS\Member::loggedIn()->member_group_id, explode(",", \IPS\Settings::i()->bim_hide_groups) ) && ( ( \IPS\Settings::i()->bim_hide_forums == 0 ) OR in_array( $this->item()->forum_id, explode( ",", \IPS\Settings::i()->bim_hide_forums ) ) ) )
+				{			
+					$msg = \IPS\Theme::i()->getTemplate( 'plugins', 'core', 'global' )->bim_hide_msg();
+					
+					$content = str_replace("<a></a>", "", $content);
+					
+					if ( \IPS\Settings::i()->bim_hide_manual == 1)
+					{
+						$content = preg_replace('/\[hide\](.+?)\[\/hide\]/is', $msg, $content);			
+					}
+					
+					if ( \IPS\Settings::i()->bim_hide_link == 1)
+					{
+						$content = preg_replace('/<a((?:(?!ipsAttachLink_image).)+)<\/a>/iU', $msg, $content);			
+					}
+					
+					if( \IPS\Settings::i()->bim_hide_code == 1 )
+					{
+						$content = preg_replace('#<pre(.*?)>(.*?)</pre>#si', $msg, $content);
+					}
+				}
+				else
+				{
+					$content = str_replace('[hide]', "", $content);
+					$content = str_replace('[/hide]', "", $content);
+				}
+			}
+			return $content;		
+		}
+		catch ( \RuntimeException $e )
+		{
+			return call_user_func_array( 'parent::' . __FUNCTION__, func_get_args() );
+		}
+	}
+
+}]]></hook></hooks><settings><setting><key>bim_hide_on</key><default></default></setting><setting><key>bim_hide_groups</key><default></default></setting><setting><key>bim_hide_link</key><default>1</default></setting><setting><key>bim_hide_code</key><default>1</default></setting><setting><key>bim_hide_manual</key><default>0</default></setting><setting><key>bim_hide_forums</key><default></default></setting></settings><settingsCode><![CDATA[//<?php
+$form->add( new \IPS\Helpers\Form\YesNo( 'bim_hide_on', \IPS\Settings::i()->bim_hide_on ) );
+
+$form->add( new \IPS\Helpers\Form\Select( 'bim_hide_groups', array_filter( explode( ',', \IPS\Settings::i()->bim_hide_groups ) ), FALSE, array( 'options' => \IPS\Member\Group::groups(), 'parse' => 'normal', 'multiple' => TRUE ) ) );
+
+$form->add( new \IPS\Helpers\Form\Node( 'bim_hide_forums', ( \IPS\Settings::i()->bim_hide_forums == 0 ) ? 0 : \IPS\Settings::i()->bim_hide_forums, FALSE, array( 'class' => 'IPS\forums\Forum', 'multiple' => TRUE, 'zeroVal' => 'all' ) ) );
+		
+$form->add( new \IPS\Helpers\Form\YesNo( 'bim_hide_link', \IPS\Settings::i()->bim_hide_link ) );
+
+$form->add( new \IPS\Helpers\Form\YesNo( 'bim_hide_code', \IPS\Settings::i()->bim_hide_code ) );
+
+$form->add( new \IPS\Helpers\Form\YesNo( 'bim_hide_manual', \IPS\Settings::i()->bim_hide_manual ) );	
+
+if ( $values = $form->values() )
+{
+	$form->saveAsSettings();
+	return TRUE;
+}
+
+return $form;]]></settingsCode><htmlFiles><html filename="bim_hide_msg.phtml">PGlwczp0ZW1wbGF0ZSBwYXJhbWV0ZXJzPSIiIC8+CjxkaXYgY2xhc3M9Imlwc01lc3NhZ2UgaXBzTWVzc2FnZV9pbmZvIj4KCXtsYW5nPSJiaW1faGlkZV9tc2cifQo8L2Rpdj4=</html></htmlFiles><cssFiles/><jsFiles/><resourcesFiles/><lang><word key="bim_hide_on" js="0">Enable this plugin?</word><word key="bim_hide_groups" js="0">Groups can not see Hide content</word><word key="bim_hide_forums" js="0">Forums will hide content</word><word key="bim_hide_link" js="0">Hide link</word><word key="bim_hide_code" js="0">Hide code</word><word key="bim_hide_manual" js="0">Hide the content in [hide] tag</word><word key="bim_hide_msg" js="0">You don't have permission to view this hidden content</word></lang><versions><version long="10000" human="1.0.0"><![CDATA[//<?php
+
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Install Code
+ */
+class ips_plugins_setup_install
+{
+	/**
+	 * ...
+	 *
+	 * @return	array	If returns TRUE, upgrader will proceed to next step. If it returns any other value, it will set this as the value of the 'extra' GET parameter and rerun this step (useful for loops)
+	 */
+	public function step1()
+	{
+		
+	}
+	
+	// You can create as many additional methods (step2, step3, etc.) as is necessary.
+	// Each step will be executed in a new HTTP request
+}]]></version></versions></plugin>

@@ -1,0 +1,57 @@
+{
+    "donateGoals": {
+        "class": "\\IPS\\Widget\\PermissionCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "sidebar",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true
+    },
+    "donateStats": {
+        "class": "\\IPS\\Widget\\PermissionCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "footer",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true
+    },
+    "donateDonate": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "sidebar",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true
+    },
+    "donateDonations": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true
+    },
+    "donateSend": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true
+    }
+}

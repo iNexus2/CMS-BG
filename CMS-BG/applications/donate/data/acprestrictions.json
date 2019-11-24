@@ -1,0 +1,41 @@
+{
+    "donations": {
+        "donations": {
+            "donations_manage": "donations_manage"
+        },
+        "logs": {
+            "logs_manage": "logs_manage"
+        },
+        "promotions": {
+            "promotions_manage": "promotions_manage"
+        },
+        "settings": {
+            "settings_manage": "settings_manage"
+        }
+    },
+    "goals": {
+        "goals": {
+            "goals_manage": "goals_manage"
+        },
+        "settings": {
+            "settings_manage": "settings_manage"
+        }
+    },
+    "setup": {
+        "currencies": {
+            "currencies_manage": "currencies_manage"
+        },
+        "gateways": {
+            "gateways_manage": "gateways_manage"
+        },
+        "rewards": {
+            "rewards_manage": "rewards_manage"
+        },
+        "autoreset": {
+            "autoreset_manage": "autoreset_manage"
+        },
+        "permissions": {
+            "permissions_manage": "permissions_manage"
+        }
+    }
+}

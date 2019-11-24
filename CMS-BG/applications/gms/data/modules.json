@@ -1,0 +1,8 @@
+{
+    "admin": {
+        "messages": {
+            "default_controller": "messages",
+            "protected": 0
+        }
+    }
+}

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Default" author_name="Invision Power Services, Inc" author_url="http://www.invisionpower.com">
+ <template template_group="browse" template_name="donationList" template_data="$table" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack( 'page__donations' )"}
+
+<div class='ipsClear ipsBox'>
+{$table|raw}
+</div>]]></template>
+ <template template_group="browse" template_name="donationRow" template_data="$table, $headers, $rows, $type=1" template_location="front" template_app="donate"><![CDATA[{{foreach $rows as $member => $row}}
+	<li class="ipsDataItem">
+        {{if $type == 2}}
+    		<div class='ipsDataItem_icon ipsPos_top ipsResponsive_hidePhone'>
+    			{template="userPhoto" group="global" app="core" params="\IPS\Member::load( $member ), 'tiny'"}
+    		</div>
+    		<div class='ipsDataItem_generic ipsDataItem_size6'>
+    			<h4 class='ipsDataItem_title'>				
+    				{template="userLink" app="core" group="global" params="\IPS\Member::load( $member ), NULL"}
+    			</h4>
+    		</div> 
+    		<div class="ipsDataItem_main">&nbsp;</div>              
+    		<div class='ipsDataItem_generic ipsDataItem_size4'>
+                <div class="ipsCommentCount ipsPos_right" data-ipsTooltip title='{formatmoney="$row" currency="-1"}'>{formatmoney="$row" currency="-1"}</div>
+    		</div>        
+        {{else}}
+    		<div class='ipsDataItem_icon ipsPos_top ipsResponsive_hidePhone'>
+                {{if $row->anon}}
+                    {template="userPhoto" app="core" group="global" params="\IPS\Member::load( 0 ), 'tiny'"}
+                {{else}}			
+				    {template="userPhoto" app="core" group="global" params="$row->author(), 'tiny'"}
+                {{endif}}            
+    		</div>
+    		<div class='ipsDataItem_generic ipsDataItem_size6'>
+    			<h4 class='ipsDataItem_title'>	
+                    {{if $row->anon}}
+                        <i>{lang="anonymous_donation_tag"}</i>
+                    {{else}}			
+    				    {{if $row->member_id}}{$row->author()->link()|raw}{{else}}<i>{lang="offline_donation"}</i>{{endif}}
+                    {{endif}}
+    			</h4>
+   			    <p class='ipsType_reset ipsType_light'>{datetime="$row->__get( $row::$databaseColumnMap['date'] )" dateonly="true"}</p>
+    		</div>
+    		<div class="ipsDataItem_main">
+				<div class='ipsType_richText ipsType_medium' data-ipsTruncate data-ipsTruncate-size='4 lines' data-ipsTruncate-type='remove'>
+					{$row->content()|raw}
+				</div>            
+    		</div>  
+    		<div class='ipsDataItem_generic ipsDataItem_size4'>
+                <div class="ipsCommentCount ipsPos_right" data-ipsTooltip title='{formatmoney="$row->_amount" currency="$row->_currency" anonymous="$row->anon_amount OR ( $row->goal() AND $row->goal()->private ) ? TRUE : FALSE"}'>{formatmoney="$row->_amount" currency="$row->_currency" anonymous="$row->anon_amount OR ( $row->goal() AND $row->goal()->private ) ? TRUE : FALSE"}</div>
+    		</div>          
+        {{endif}}            
+	</li>
+{{endforeach}}]]></template>
+ <template template_group="browse" template_name="goalBlock" template_data="$goal" template_location="front" template_app="donate"><![CDATA[<div class='ipsBox'>
+	<h2 class='ipsType_sectionTitle ipsType_reset'><a href="{$goal->url()}">{$goal->_title}</a></h2>
+	<div class='ipsPad_half'>
+	   <span class='ipsType_light ipsType_small'>{lang="goal_starts"} {datetime="$goal->start_date" norelative="true" dateonly="true"} {{if $goal->end_date}} {lang="and_ends"} {datetime="$goal->end_date" norelative="true" dateonly="true"}{{endif}}</span>
+
+		<div class='ipsClearfix ipsType_medium'>
+            <div data-role='commentContent' class='ipsType_normal ipsPad_half ipsType_richText ipsContained' data-controller='core.front.core.lightboxedImages'>
+                {$goal->description|raw}
+            </div>
+			<ul class='ipsList_inline ipsType_small ipsEmbedded_stats'>
+				<li><i class='fa fa-money'></i> {number="$goal->_items"} {lang="donations"}</li>
+                <li><i class='fa fa-eye'></i> {number="$goal->views"} {lang="views"}</li>
+                
+                <li class='ipsPos_right'>
+                    <div class='ipsGrid_span6 ipsResponsive_hidePhone'>
+                    <div class='ipsPos_center ipsType_center' data-ipsTooltip data-ipsTooltip-label="{{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}% {lang="percent_of_goal_reached"}">
+                       <span class="ipsAttachment_progress"><span style='width: {{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}%'></span></span><br>
+
+                    </div>
+                    </div>                     
+                </li>
+                <li class='ipsPos_right'><span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$goal->received, $goal->_currency"} {lang="donate_of"} {formatmoney="$goal->amount, $goal->_currency"} {lang="goal_reached"}</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<br />]]></template>
+ <template template_group="browse" template_name="goalList" template_data="$goals" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack( 'page__goals' )"}
+
+<div class='ipsBox'>
+	<h2 class='ipsType_sectionTitle ipsType_reset'>{lang="page__goals"}</h2>
+    <ol class="ipsDataList ipsDataList_large">
+        {{if !empty( $goals ) }}
+            {template="goalRow" group="browse" params="NULL, NULL, $goals"}
+        {{else}}
+            <li class='ipsDataItem ipsDataItem_main'>
+                <p class='ipsType_reset'>{lang="no_active_goals"}</p>
+            </li>
+        {{endif}}
+    </ol>
+</div>]]></template>
+ <template template_group="browse" template_name="goalPage" template_data="$goal, $donations" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="$goal->_title"}
+
+{template="goalBlock" group="browse" params="$goal"}  
+
+{{if member.group['g_dt_view_donations']}}
+    <div class='ipsClear ipsBox'>
+    {$donations|raw}
+    </div>
+{{endif}}
+
+<br>{template="sharelinks" app="core" group="global" params="$goal"}]]></template>
+ <template template_group="browse" template_name="goalRow" template_data="$table, $headers, $rows" template_location="front" template_app="donate"><![CDATA[{{foreach $rows as $row}}
+	<li class="ipsDataItem">
+		<div class="ipsDataItem_main">
+        	<h4 class='ipsDataItem_title'>				
+				{$row->_title}
+			</h4>
+            <div class='ipsType_light ipsType_small ipsSpacer_bottom'>{lang="goal_starts"} {datetime="$row->start_date" norelative="true" dateonly="true"} {{if $row->end_date}} {lang="and_ends"} {datetime="$row->end_date" norelative="true" dateonly="true"}{{endif}}</div>
+            <div data-role='commentContent' class='ipsType_normal ipsType_richText ipsSpacer_bottom ipsContained' data-controller='core.front.core.lightboxedImages' data-ipsTruncate data-ipsTruncate-size='4 lines' data-ipsTruncate-type='remove'>
+                {$row->description|raw}
+            </div>  
+            
+            <div class='ipsPos_right'>
+                <span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$row->received, $row->_currency"} {lang="donate_of"} {formatmoney="$row->amount, $row->_currency"} {lang="goal_reached"}</span>
+
+                <div class='ipsGrid_span4 ipsResponsive_hidePhone'>
+                    <div class='ipsPos_center ipsType_center' data-ipsTooltip data-ipsTooltip-label="{{if round( $row->goal_status ) > 100}}100{{else}}{expression="round( $row->goal_status )"}{{endif}}% {lang="percent_of_goal_reached"}">
+                       <span class="ipsAttachment_progress"><span style='width: {{if round( $row->goal_status ) > 100}}100{{else}}{expression="round( $row->goal_status )"}{{endif}}%'></span></span><br>
+                    </div>
+                </div>                     
+            </div>            
+                     
+			<ul class='ipsList_inline ipsType_small'>
+				<li><i class='fa fa-money'></i> {number="$row->_items"} {lang="donations"}</li>
+                <li><i class='fa fa-eye'></i> {number="$row->views"} {lang="views"}</li>
+                
+			</ul>                         
+		</div>  
+		<div class='ipsDataItem_generic ipsDataItem_size4'>
+		</div>              
+	</li>
+{{endforeach}}]]></template>
+ <template template_group="browse" template_name="index" template_data="$donations" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack('__app_donate')"}
+
+{{if member.group['g_dt_donate']}}
+    <ul class="ipsToolList ipsToolList_horizontal ipsClearfix ipsSpacer_bottom ipsSpacer_half">
+    	<li class='ipsToolList_primaryAction'>
+    		<a class="ipsButton ipsButton_medium ipsButton_important ipsButton_fullWidth" href="{url="app=donate&module=donate&controller=payment&_new=1" seoTemplate="donate_donate"}">{lang="donate_now"}</a>
+    	</li>
+    </ul>
+{{endif}}
+
+{{if member.group['g_dt_view_goals']}}
+    <div class='ipsClear ipsBox'>	
+        {{foreach \IPS\donate\Goal::roots( NULL, NULL, ( \IPS\Settings::i()->dt_goal_reset ) ? array( 'g_show=1 AND g_start_date > ?', \IPS\Settings::i()->dt_goal_reset ) : array( 'g_show=1' ) ) as $goal}}
+            {template="goalBlock" group="browse" params="$goal"}
+        {{endforeach}}    
+    </div>
+{{endif}}
+
+{{if member.group['g_dt_view_donations']}}
+    <div class='ipsClear ipsBox'>
+    	<h2 class='ipsType_sectionTitle ipsType_reset'>{lang="latest_donations"}</h2>
+        <ol class="ipsDataList ipsDataList_large">
+            {template="donationRow" group="browse" params="NULL, NULL, $donations"}
+        </ol>
+    </div>
+{{endif}}]]></template>
+ <template template_group="browse" template_name="topDonorsList" template_data="$donations=array()" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack( 'page__top_donors' )"}
+
+<div class='ipsBox'>
+	<h2 class='ipsType_sectionTitle ipsType_reset'>{lang="page__top_donors"}</h2>
+    <ol class="ipsDataList ipsDataList_large">
+        {template="donationRow" group="browse" params="NULL, NULL, $donations, 2"}
+    </ol>
+</div>]]></template>
+ <template template_group="forms" template_name="resetinterval" template_data="$name, $value" template_location="admin" template_app="donate"><![CDATA[<ul class="ipsField_fieldList">
+	<li><input type="number" name="{$name}[0]" class="ipsField_short" value="{$value[0]}" min="0" /> {lang="day_of_the"}
+    <select name="{$name}[1]"><option value='0' {{if $value[1] == 0}}selected='selected'{{endif}}>--</option><option value='week' {{if $value[1] == 'week'}}selected='selected'{{endif}}>{lang="reset_week"}</option><option value='month' {{if $value[1] == 'month'}}selected='selected'{{endif}}>{lang="reset_month"}</option><option value='year' {{if $value[1] == 'year'}}selected='selected'{{endif}}>{lang="reset_year"}</option></select>
+ </li>
+</ul>]]></template>
+ <template template_group="global" template_name="donateChangeRow" template_data="$table, $headers, $rows, $includeFirstCommentInCommentCount=TRUE" template_location="front" template_app="donate"><![CDATA[{{if count( $rows )}}
+	{{foreach $rows as $row}}
+		<li class="ipsDataItem ipsDataItem_responsivePhoto {{if !$row['c_approved']}}ipsModerated{{endif}} {{if method_exists( $row, 'tableClass' ) && $row->tableClass()}}ipsDataItem_{$row->tableClass()}{{endif}}">
+        	<div class='ipsDataItem_generic ipsDataItem_size3'>
+        		<span class='ipsBadge ipsBadge_button ipsBadge_verySmall {{if $row['c_new_amount'] == $row['c_previous_amount']}}ipsBadge_neutral{{else}}{{if $row['c_new_amount'] > $row['c_previous_amount']}}ipsBadge_positive{{else}}ipsBadge_negative{{endif}}{{endif}}'>{{if $row['c_new_amount'] == $row['c_previous_amount']}}No Change{{else}}<i class='fa fa-{{if $row['c_new_amount'] > $row['c_previous_amount']}}plus{{else}}minus{{endif}}'></i> {formatmoney="$row['c_new_amount'] - $row['c_previous_amount']"}{{endif}}</span>
+        	</div>
+
+			<div class='ipsDataItem_main'>
+				<h4 class='ipsDataItem_title ipsType_break'>
+                    {{if $row['c_notes']}}{$row['c_notes']|raw}{{else}}<i>No note left..</i>{{endif}}   
+				</h4>
+
+				{{if !$row['c_approved'] AND $row['c_donor']->member_id != $row['c_member']->member_id}}
+                    <ul class='ipsButton_split ipsPos_right'>
+                        <li><a href='{url="app=donate&module=donate&controller=send&do=approve&id={$row['c_id']}" base="front"}' class='ipsButton ipsButton_verySmall ipsButton_positive'>Approve</a></li>
+                        <li><a href='{url="app=donate&module=donate&controller=send&do=reject&id={$row['c_id']}" base="front"}' class='ipsButton ipsButton_verySmall ipsButton_negative' data-confirm>Reject</a></li>
+                    </ul>
+                {{endif}}   
+				{{if !$row['c_approved'] AND $row['c_donor']->member_id == $row['c_member']->member_id}}
+                    <span class='ipsPos_right ipsBadge ipsBadge_warning'>Transfer Pending</span>
+                {{endif}}  
+				{{if $row['c_approved'] == 2}}
+                    <span class='ipsPos_right ipsBadge ipsBadge_negative'>Transfer Rejected</span>
+                {{endif}}                                            
+			</div>
+    		<ul class='ipsDataItem_lastPoster ipsDataItem_withPhoto'>
+                {{if $row['c_member']}}
+        			<li>		
+                        {template="userPhoto" app="core" group="global" params="$row['c_member'], 'tiny'"}
+        			</li>
+                {{endif}}
+    			<li>
+                    {{if $row['c_member']}}
+                        {$row['c_member']->link()|raw}
+                    {{endif}}                    	
+    			</li>              
+    			<li class="ipsType_light">
+                    {datetime="$row['c_date']"}
+    			</li>
+    		</ul>			           
+		</li>
+	{{endforeach}}
+{{endif}}
+]]></template>
+ <template template_group="global" template_name="profileHook" template_data="$member" template_location="front" template_app="donate"><![CDATA[{{if member.member_id == $member->member_id OR member.group['g_dt_moderate_donations']}}
+    <li>
+	    <h4 class='ipsType_minorHeading'>{lang="donate_member_donations"}</h4>
+	    {{if member.member_id == $member->member_id OR member.group['g_dt_moderate_donations']}}<a href='{$member->url()->setQueryString( array( 'tab' => 'node_donate_DonateChanges' ) )}' class='ipsType_blendLinks'>{{endif}}{formatmoney="$member->donate_amount" currency="-1"}{{if member.member_id == $member->member_id OR member.group['g_dt_moderate_donations']}}</a>{{endif}}&nbsp;
+
+        {{if member.group['g_dt_moderate_donations']}}    
+        	<a href='{url="app=donate&module=donate&controller=send&do=editTotal&member={$member->member_id}" base="front"}' class='ipsType_blendLinks' data-ipsDialog data-ipsDialog-modal='true' data-ipsDialog-title='{lang="donate_edit_donation_total"}'>
+        		<i class='fa fa-pencil-square'></i>&nbsp;</span>
+        	</a>  
+        {{endif}}              
+    </li> 
+{{endif}}]]></template>
+ <template template_group="global" template_name="topicView" template_data="$comment" template_location="front" template_app="donate"><![CDATA[{{if !\IPS\Settings::i()->dt_hide_topic_hook AND $comment->author()->donate_donations}}
+	<li class="ipsType_light ipsSpacer_top" data-ipsTooltip title="{lang="donor_title"}">      
+		<span class="ipsBadge ipsBadge_small ipsBadge_icon ipsBadge_positive"><i class="fa fa-dollar"></i></span> {lang="member_donor"}
+	</li>
+{{endif}}]]></template>
+ <template template_group="index" template_name="index" template_data="$donations" template_location="front" template_app="donate"><![CDATA[{template="pageHeader" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack('__app_donate')"}
+
+{{if member.group['g_dt_donate']}}
+    <ul class="ipsToolList ipsToolList_horizontal ipsResponsive_hidePhone ipsClearfix ipsSpacer_bottom ipsSpacer_half">
+    	<li class='ipsToolList_primaryAction'>
+    		<a class="ipsButton ipsButton_medium ipsButton_important ipsButton_fullWidth" href="{url="app=donate&module=donate&controller=payment&_new=1" seoTemplate="donate_donate"}">{lang="donate_now"}</a>
+    	</li>
+    </ul>
+{{endif}}
+
+{{if member.group['g_dt_view_goals']}}
+<div class='ipsClear ipsBox'>	
+    {{foreach \IPS\donate\Goal::roots( NULL, NULL, array( 'g_show=1' ) ) as $goal}}
+        {template="goalBlock" group="browse" params="$goal"}
+    {{endforeach}}    
+    </div>
+{{endif}}
+
+{{if member.group['g_dt_view_donations']}}
+    <div class='ipsClear ipsBox'>
+    	<h2 class='ipsType_sectionTitle ipsType_reset'>{lang="latest_donations"}</h2>
+        <ol class="ipsDataList ipsDataList_large">
+            {template="donationRow" group="browse" params="NULL, NULL, $donations"}
+        </ol>
+    </div>
+{{endif}}]]></template>
+ <template template_group="index" template_name="wizardForm" template_data="$stepNames, $activeStep, $output, $baseUrl, $showSteps" template_location="front" template_app="donate"><![CDATA[<div data-ipsWizard>
+{{foreach $stepNames as $step => $name}}
+	{{if $activeStep == $name}}
+    <div data-role="wizardContent">
+		{$output|raw}
+        </div>
+	{{endif}}
+{{endforeach}}
+</div>]]></template>
+ <template template_group="payment" template_name="paymentMessage" template_data="" template_location="front" template_app="donate"><![CDATA[<div class='ipsType_normal'>
+	{lang="donation_success_message"}<br><br><a href='{url="app=donate" seoTemplate="donate"}'>{lang="return_donations"}</a>
+</div>]]></template>
+ <template template_group="payment" template_name="paymentWrapper" template_data="$content" template_location="front" template_app="donate"><![CDATA[
+<div class='ipsType_center ipsPad'>
+	<i class='ipsType_huge fa fa-money'></i>
+	<h1 class='ipsType_reset ipsType_veryLarge ipsType_center'>{lang="donation"}</h1>
+</div>
+
+<section class='ipsAreaBackground_light ipsPad'>
+	<div class='ipsBox ipsPad'>
+		{$content|raw}
+	</div>
+</section>]]></template>
+ <template template_group="widgets" template_name="donateDonate" template_data="$form, $orientation='vertical'" template_location="front" template_app="donate"><![CDATA[<div id='elDonateBox' class='ipsWidget ipsWidget_vertical ipsBox'>    
+    <h3 class='ipsType_reset ipsWidget_title'>{lang="block_donateDonate"}</h3>
+    <div class='ipsWidget_inner'>
+    	<div class='ipsPad_half'>      
+            <div class='ipsPos_center ipsType_center'>
+                {lang="block_donateDonate_text"}
+            </div>
+        
+            {$form|raw} 
+  		</div>
+    </div>
+</div>]]></template>
+ <template template_group="widgets" template_name="donateDonations" template_data="$donations, $type, $orientation='vertical'" template_location="front" template_app="donate"><![CDATA[{{if !empty( $donations ) }}
+	<h3 class='ipsWidget_title ipsType_reset'>{{if $type == 2}}{lang="top_donors"}{{else}}{lang="latest_donations"}{{endif}}</h3>
+
+	{{if $orientation == 'vertical'}}
+		<div class='ipsPad_half ipsWidget_inner'>
+			<ul class='ipsDataList ipsDataList_reducedSpacing'>
+				{{foreach $donations as $member => $donation}}
+                    {{if $type == 2}}
+    					<li class='ipsDataItem'>
+    						<div class='ipsDataItem_icon ipsPos_top'>
+                                {template="userPhoto" group="global" app="core" params="\IPS\Member::load( $member ), 'tiny'"}
+    						</div>
+    						<div class='ipsDataItem_main'>
+    							<div class="ipsCommentCount ipsPos_right">{formatmoney="$donation" currency="-1"}</div>
+    							{template="userLink" app="core" group="global" params="\IPS\Member::load( $member ), NULL"}<br>		
+    						</div>
+    					</li>    
+                    {{else}}
+    					<li class='ipsDataItem'>
+    						<div class='ipsDataItem_icon ipsPos_top'>
+                                {{if $donation->anon}}
+                                    {template="userPhoto" app="core" group="global" params="\IPS\Member::load( 0 ), 'tiny'"}
+                                {{else}}			
+                				    {template="userPhoto" app="core" group="global" params="$donation->author(), 'tiny'"}
+                                {{endif}}                             
+    						</div>
+    						<div class='ipsDataItem_main'>
+    							<div class="ipsCommentCount ipsPos_right" data-ipsTooltip title='{formatmoney="$donation->_amount" currency="$donation->_currency" anonymous="$donation->anon_amount OR ( $donation->goal() AND $donation->goal()->private ) ? TRUE : FALSE"}'>{formatmoney="$donation->_amount" currency="$donation->_currency" anonymous="$donation->anon_amount OR ( $donation->goal() AND $donation->goal()->private ) ? TRUE : FALSE"}</div>
+    							{{if $donation->anon}}
+                                    <i>{lang="anonymous_donation_tag"}</i>
+                                {{else}}			
+                                    {{if $donation->member_id}}{$donation->author()->link()|raw}{{else}}<i>{lang="offline_donation"}</i>{{endif}}
+                                {{endif}}<br>
+   							    <span class='ipsType_light ipsType_small'>{datetime="$donation->date"}</span>
+    						</div>
+    					</li>                    
+                    {{endif}}                
+				{{endforeach}}
+  				<li class='ipsDataItem'>
+					<div class='ipsDataItem_main ipsType_small ipsType_light ipsType_center'>
+                        {{if $type == 2}}
+                            <a href='{url="app=donate&module=donate&controller=browse&do=topdonors" seoTemplate="donate_topdonors"}'>{lang="view_top_donors"}</a>
+                        {{else}}
+                            <a href='{url="app=donate&module=donate&controller=browse&do=donations" seoTemplate="donate_donations"}'>{lang="view_donations"}</a>                       
+                        {{endif}}
+					</div>
+				</li>                
+			</ul>
+		</div>
+	{{else}}
+		<div class='ipsWidget_inner'>
+			<ul class='ipsDataList'>
+				{{foreach $donations as $member => $donation}}
+                    {{if $type == 2}}
+                        <li class="ipsDataItem ipsDataItem_responsivePhoto">        
+    						<div class='ipsDataItem_icon ipsPos_top'>
+    							{template="userPhoto" group="global" app="core" params="\IPS\Member::load( $member ), 'tiny'"}
+    						</div>                      
+                        	<div class='ipsDataItem_main'>
+                        		<h4 class='ipsDataItem_title ipsType_break'>
+                        			{template="userLink" app="core" group="global" params="\IPS\Member::load( $member ), NULL"}<br>	
+                        		</h4>
+    							<div class="ipsCommentCount ipsPos_right">{formatmoney="$donation" currency="-1"}</div>
+                        	</div>
+                        </li> 
+                    {{else}}
+                        <li class="ipsDataItem ipsDataItem_responsivePhoto">        
+    						<div class='ipsDataItem_icon ipsPos_top'>
+                                {{if $donation->anon}}
+                                    {template="userPhoto" app="core" group="global" params="\IPS\Member::load( 0 ), 'tiny'"}
+                                {{else}}			
+                				    {template="userPhoto" app="core" group="global" params="$donation->author(), 'tiny'"}
+                                {{endif}}
+    						</div>                      
+                        	<div class='ipsDataItem_main'>
+                        		<h4 class='ipsDataItem_title ipsType_break'>
+                                    {{if $donation->anon}}
+                                        <i>{lang="anonymous_donation_tag"}</i>
+                                    {{else}}			
+                    				    {{if $donation->member_id}}{$donation->author()->link()|raw}{{else}}<i>{lang="offline_donation"}</i>{{endif}}<br>
+                                    {{endif}}                                
+                           		</h4>
+    							<div class="ipsCommentCount ipsPos_right" data-ipsTooltip title='{{if $type == 2}}{formatmoney="$donation->total_amount"}{{else}}{formatmoney="$donation->_amount"}{{endif}}'>{{if $type == 2}}{formatmoney="$donation->total_amount"}{{else}} {formatmoney="$donation->_amount"}{{endif}}</div>
+                        		{{if $type == 1}}
+                                    {{if $donation->goal}}
+                                        <p class='ipsType_reset ipsType_medium ipsType_light'>
+                                			{$donation->container()->_title}
+                                		</p>
+                                    {{endif}}    
+                                    {{if $donation->note}}
+                                		<p class='ipsType_reset ipsType_small ipsType_light'>
+                                			{$donation->note}
+                                		</p>
+                                    {{endif}}
+                                {{endif}}
+                        	</div>
+                        </li>                    
+                    {{endif}}                  
+				{{endforeach}}
+			</ul>
+		</div>
+	{{endif}}
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="donateGoals" template_data="$goal, $goals" template_location="front" template_app="donate"><![CDATA[{{if $goal}}
+    <h3 class='ipsWidget_title ipsType_reset'>{$goal->_title}</h3>
+    <div class='ipsPad ipsWidget_inner'>
+        <div class='ipsContained'>
+    		{$goal->description|raw}
+    	</div>
+        <div data-ipsTooltip data-ipsTooltip data-ipsTooltip-label="{{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}% {lang="percent_of_goal_reached"}">
+    		<span class="ipsAttachment_progress" style='width: 100%'><span style='width: {{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}%'></span></span><br>
+            <span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$goal->received, $goal->_currency"} {lang="donate_of"} {formatmoney="$goal->amount, $goal->_currency"} {lang="goal_reached"}</span>		
+    	</div>  
+        
+        <a class="ipsButton ipsButton_small ipsButton_primary ipsButton_fullWidth ipsSpacer_top ipsSpacer_half" href="{url="app=donate&module=donate&controller=payment&_new=1" seoTemplate="donate_donate"}">{lang="donate_now"}</a>
+    </div>
+{{else}}
+    {{if !empty( $goals ) }}
+        <h3 class='ipsWidget_title ipsType_reset'>{lang="block_donateGoals"}</h3>
+        <div class='ipsPad ipsWidget_inner'>    
+    		{{foreach $goals as $goal}}
+                <span class='ipsType_normal'>{$goal->_title}</span>
+                <div data-ipsTruncate data-ipsTruncate-size='5 lines' data-ipsTruncate-type='remove' class='ipsContained' >
+                    {$goal->description|raw}
+                </div><br />
+                
+                <div data-ipsTooltip data-ipsTooltip-label="{{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}% {lang="percent_of_goal_reached"}">
+                    <span class="ipsAttachment_progress" style='width: 100%'><span style='width: {{if round( $goal->goal_status ) > 100}}100{{else}}{expression="round( $goal->goal_status )"}{{endif}}%'></span></span><br>
+                    <span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$goal->received, $goal->_currency"} {lang="donate_of"} {formatmoney="$goal->amount, $goal->_currency"} {lang="goal_reached"}</span>		
+                </div>  
+                
+                <a class="ipsButton ipsButton_small ipsButton_primary ipsButton_fullWidth ipsSpacer_top ipsSpacer_half" href="{url="app=donate&module=donate&controller=payment&_new=1" seoTemplate="donate_donate"}">{lang="donate_now"}</a>
+                
+                <hr class='ipsHr'>
+    		{{endforeach}}			
+    		<div class='ipsType_small ipsType_light ipsType_center'>
+                <a href='{url="app=donate&module=donate&controller=browse&do=goals" seoTemplate="donate_goals"}'>{lang="view_goals"}</a>                       
+    		</div>       
+        </div>
+    {{endif}} 
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="donateSend" template_data="$orientation='vertical'" template_location="front" template_app="donate"><![CDATA[<div id='elDonateBox' class='ipsWidget ipsWidget_vertical ipsBox'>    
+    <h3 class='ipsType_reset ipsWidget_title'>{lang="block_donateSend_title"}</h3>
+    <div class='ipsWidget_inner'>
+    	<div class='ipsPad ipsType_center'>      
+            <div class='ipsSpacer_bottom'>
+                {lang="donatesend_info" sprintf="\IPS\Member::loggedIn()->donate_amount"}
+            </div>
+        
+        	<a href='{url="app=donate&module=donate&controller=send&do=sendTotal" base="front"}' class='ipsButton ipsButton_primary ipsButton_fullWidth' data-ipsDialog data-ipsDialog-modal='true' data-ipsDialog-title='{lang="donate_send_donation_total"}'>
+        	   {lang="donate_send_donation"}
+        	</a>  
+  		</div>
+    </div>
+</div>]]></template>
+ <template template_group="widgets" template_name="donateStats" template_data="$stats, $orientation='vertical'" template_location="front" template_app="donate"><![CDATA[<h3 class='ipsType_reset ipsWidget_title'>{lang="block_donateStats"}</h3>
+<div class='ipsWidget_inner'>
+	{{if $orientation == 'vertical'}}
+		<div class='ipsPad_half'>
+			<ul class="ipsDataList">
+				<li class="ipsDataItem">
+					<div class="ipsDataItem_main ipsPos_middle">
+						<strong>{lang="total_donations"}</strong>
+					</div>
+					<div class="ipsDataItem_stats ipsDataItem_statsLarge">
+						<span class="ipsDataItem_stats_number">{formatmoney="$stats['totalDonations'], -1"}</span>
+					</div>
+				</li>
+                {{if isset( $stats['totalFees'] )}}
+    				<li class="ipsDataItem">
+    					<div class="ipsDataItem_main ipsPos_middle">
+    						<strong>{lang="total_fees"}</strong>
+    					</div>
+    					<div class="ipsDataItem_stats ipsDataItem_statsLarge">
+    						<span class="ipsDataItem_stats_number">{formatmoney="$stats['totalFees'], -1"}</span>
+    					</div>
+    				</li>                
+                {{endif}}                
+                {{if $stats['totalGoals']}}
+    				<li class="ipsDataItem">
+    					<div class="ipsDataItem_main ipsPos_middle">
+    						<strong>{lang="total_goals"}</strong>
+    					</div>
+    					<div class="ipsDataItem_stats ipsDataItem_statsLarge">
+    						<span class="ipsDataItem_stats_number">{formatmoney="$stats['totalGoals'], -1"}</span>
+    					</div>
+    				</li>                
+                    
+    				<li class="ipsDataItem_selected">
+    					<div class="ipsDataItem_main ipsPos_middle">
+    						<strong>{lang="still_needed"}</strong>
+    					</div>
+    					<div class="ipsDataItem_stats ipsDataItem_statsLarge">
+    						<span class="ipsDataItem_stats_number">{formatmoney="$stats['totalGoals'] - $stats['totalDonations'], -1"}</span>
+    					</div>
+    				</li>                
+    				<li class="ipsDataItem">
+    					<div class="ipsDataItem_main ipsType_center ipsPos_middle">
+    					   <div data-ipsTooltip data-ipsTooltip-label="{{if round( $stats['totalDonations'] / $stats['totalGoals'] * 100 ) > 100}}100{{else}}{expression="round( $stats['totalDonations'] / $stats['totalGoals'] * 100 )"}{{endif}}% {lang="percent_of_goal_reached"}">
+                        		<span class="ipsAttachment_progress"><span style='width: {{if round( $stats['totalDonations'] / $stats['totalGoals'] * 100 ) > 100}}100{{else}}{expression="round( $stats['totalDonations'] / $stats['totalGoals'] * 100 )"}{{endif}}%'></span></span><br>
+                                <span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$stats['totalDonations'], -1"} {lang="donate_of"} {formatmoney="$stats['totalGoals'], -1"} {lang="goal_reached"}</span>		
+                        	</div>  
+    					</div>	
+    				</li> 
+                {{endif}}              
+			</ul>
+          
+		</div>
+	{{else}}
+		<div class='ipsGrid ipsGrid_collapsePhone ipsWidget_stats'>
+			<div class='ipsGrid_span3 ipsType_center'>
+				<span class='ipsType_large ipsWidget_statsCount'>{formatmoney="$stats['totalDonations'], -1"}</span><br>
+				<span class='ipsType_light ipsType_medium'>{lang="total_donations"}</span>
+			</div>
+            {{if isset( $stats['totalFees'] )}}
+    			<div class='ipsGrid_span3 ipsType_center'>
+    				<span class='ipsType_large ipsWidget_statsCount'>{formatmoney="$stats['totalFees'], -1"}</span><br>
+    				<span class='ipsType_light ipsType_medium'>{lang="total_fees"}</span>
+    			</div>            
+            {{endif}}                   
+            {{if $stats['totalGoals']}}
+    			<div class='ipsGrid_span3 ipsType_center'>
+    				<span class='ipsType_large ipsWidget_statsCount'>{formatmoney="$stats['totalGoals'], -1"}</span><br>
+    				<span class='ipsType_light ipsType_medium'>{lang="total_goals"}</span>
+    			</div>
+    			<div class='ipsGrid_span3 ipsType_center'>				
+    				<div>
+    					<span class='ipsType_normal'>
+                        	<div data-ipsTooltip data-ipsTooltip-label="{{if round( $stats['totalDonations'] / $stats['totalGoals'] * 100 ) > 100}}100{{else}}{expression="round( $stats['totalDonations'] / $stats['totalGoals'] * 100 )"}{{endif}}% {lang="percent_of_goal_reached"}">
+                        		<span class="ipsAttachment_progress"><span style='width: {{if round( $stats['totalDonations'] / $stats['totalGoals'] * 100 ) > 100}}100{{else}}{expression="round( $stats['totalDonations'] / $stats['totalGoals'] * 100 )"}{{endif}}%'></span></span><br>
+                                <span class='ipsType_light ipsType_small ipsResponsive_hidePhone'>{formatmoney="$stats['totalDonations'], -1"} {lang="donate_of"} {formatmoney="$stats['totalGoals'], -1"} {lang="goal_reached"}</span>		
+                        	</div> 
+                        </span>
+    				</div>
+    			</div>
+            {{endif}}
+		</div>
+	{{endif}}
+</div>]]></template>
+</theme>
